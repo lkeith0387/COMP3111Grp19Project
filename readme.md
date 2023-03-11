@@ -31,7 +31,6 @@
       <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
-     
     </tr>
     <tr>
       <td>Cell</td>
@@ -39,7 +38,6 @@
       <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
- 
     </tr>
     <tr>
       <td>Cell</td>
@@ -47,7 +45,6 @@
       <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
- 
     </tr>
     <tr>
       <td>Cell</td>
@@ -55,7 +52,6 @@
       <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
-  
     </tr>
   </tbody>
 </table>
