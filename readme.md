@@ -30,11 +30,6 @@
       <td>LAU, Nga Sze  </td>
       <td>20712166</td>
       <td>AL-root</td>
-    </tr>
-    <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
     </tr>
@@ -44,8 +39,10 @@
       <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
+      <td>Cell</td>
     </tr>
     <tr>
+      <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
       <td>Cell</td>
