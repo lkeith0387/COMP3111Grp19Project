@@ -27,9 +27,9 @@
   <tbody>
     <tr>
       <td>19</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>LAU, Nga Sze  </td>
+      <td>20712166</td>
+      <td>AL-root</td>
     </tr>
     <tr>
       <td>Cell</td>
