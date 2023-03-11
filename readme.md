@@ -26,11 +26,10 @@
   </thead>
   <tbody>
     <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
+      <td>19</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td>Cell</td>
