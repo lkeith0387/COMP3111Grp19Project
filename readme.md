@@ -30,24 +30,24 @@
       <td>LAU, Nga Sze  </td>
       <td>20712166</td>
       <td>AL-root</td>
-      <td>Cell</td>
-      <td>Cell</td>
+      <td>A</td>
+      <td></td>
     </tr>
     <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
+      <td></td>
+      <td>CHEUNG, Kwok Wai</td>
+      <td>20762484</td>
+      <td>copycatv</td>
+      <td>B</td>
+      <td></td>
     </tr>
     <tr>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
-      <td>Cell</td>
+      <td></td>
+      <td>LEE, Chun Yin</td>
+      <td>20855126</td>
+      <td>lkeith0387</td>
+      <td>C</td>
+      <td>Y</td>
     </tr>
   </tbody>
 </table>
