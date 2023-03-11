@@ -10,17 +10,18 @@
 
 
 
-<p align="center"> asdjkasdjkasdk </p>
+<p align="center"> COMP3111 S2023 - Team Project (PPC1 Calculator) </p>
+<p align="center"> Team Formation Registration Form </p>
 
 <table>
   <thead>
     <tr>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
-      <th>Header</th>
+      <th>Team Number</th>
+      <th>Student Name</th>
+      <th>Student ID</th>
+      <th>Github ID</th>
+      <th>Function Assigned</th>
+      <th>Is Team Leader(Y)</th>
     </tr>
   </thead>
   <tbody>
