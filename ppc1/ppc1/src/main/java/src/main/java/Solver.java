@@ -6,14 +6,14 @@ package src.main.java;
 public class Solver {
     private int Cap_Labor = 0;
     private int Cap_Grape = 0;
-    private int Prc_Rose = 0 ;
-    private int Prc_Noir = 0 ;
+    private double Prc_Rose = 0 ;
+    private double Prc_Noir = 0 ;
 
     private int Opt_Rose = 0;
     private int Opt_Noir = 0;
     //private int Production_Capacity_Limit = 0;
     //private double Man_Power_Limit = 0 ;
-    public Solver(int Cap_Labor,int Cap_Grape,int Prc_Rose,int Prc_Noir){
+    public Solver(int Cap_Labor,int Cap_Grape,double Prc_Rose,double Prc_Noir){
         this.Cap_Labor = Cap_Labor;
         this.Cap_Grape = Cap_Grape;
         this.Prc_Rose =  Prc_Rose;
