@@ -16,8 +16,8 @@ public class SolverTester {
     @Test
     public void calculation() {
         Solver sol = new Solver(16,36,12,40);
-        double actual = sol.Calculation(1,1);
-        double expected = 52.0;
+        float actual = sol.Calculation(1,1);
+        float expected = 52.0f;
         assertEquals(expected,actual,0);
     }
 }
