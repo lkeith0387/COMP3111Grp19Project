@@ -200,7 +200,7 @@ public class functionCController {
     }
 
     private void Show_Message(int Opt_Rose,int Opt_Noir) {
-        String message = "";
+
         ObservableList<String> items = FXCollections.observableArrayList();
         if(5000<Opt_Rose+Opt_Noir){
            // message = message +"w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor & grape volume!\n";
@@ -220,13 +220,13 @@ public class functionCController {
     private boolean Data_Validation(){
 
         String[] Message = new String[]{
-                "Input error for Week Of Year:",
-                "Input error for Capacity Of Labor",
-                "Input error for Capacity Of Grape",
-                "Input error for Price Of Rose",
-                "Input error for Price Of P-Noir",
-                "Input error for Backorder Volume of Rose",
-                "Input error for Backorder Volume of P-Noir"
+                "Input error for Week Of Year: Please enter an integer in between 2301 and 2315",
+                "Input error for Capacity Of Labor: Please enter an integer greater than 0",
+                "Input error for Capacity Of Grape: Please enter an integer greater than 0",
+                "Input error for Price Of Rose: Please enter a number greater than 0",
+                "Input error for Price Of P-Noir: Please enter a number greater than 0",
+                "Input error for Backorder Volume of Rose: Please enter a number greater than 0",
+                "Input error for Backorder Volume of P-Noir: Please enter a number greater than 0"
 
         };
         boolean Flag = true;
@@ -261,7 +261,7 @@ public class functionCController {
             items.add(Message[6]);
         }
         Or_Message.setItems(items);
-        return false;
+        return Flag;
     }
 
     private boolean Check_Week_Of_Year() {
