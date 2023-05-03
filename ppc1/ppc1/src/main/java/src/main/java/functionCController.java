@@ -11,6 +11,9 @@ import javafx.scene.input.InputMethodEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 
+/**
+ * The functionCContoller class is the class to perform function C in pp
+ */
 public class functionCController {
 
     @FXML
@@ -133,10 +136,7 @@ public class functionCController {
     @FXML
     private Label data_input_caption3b2;
 
-    @FXML
-    void getDefaultValue(InputMethodEvent event) {
 
-    }
     int Week_Of_Year;
     int Bko_Rose;
     int Cap_Labor;
@@ -167,9 +167,6 @@ public class functionCController {
             return;
         }
         Get_Data();
-
-
-
         boolean Bko_fulfill = false;
         int Opt_Rose = 0 ;
         int Opt_Noir = 0 ;
@@ -230,33 +227,41 @@ public class functionCController {
 
         };
         boolean Flag = true;
+        Validation val = new Validation();
         ObservableList<String> items = FXCollections.observableArrayList();
-        if(!Check_Week_Of_Year()){
+        if(!val.Check_Week_Of_Year(Textfield_Week_Of_Year.getText())){
+            Textfield_Week_Of_Year.setText("");
             Flag = false;
             items.add(Message[0]);
         }
-        if(!Check_Cap_Labor()){
+        if(!val.Check_Cap_Labor(Textfield_Cap_Labor.getText())){
+            Textfield_Cap_Labor.setText("");
             Flag =false;
             items.add(Message[1]);
         }
-        if(!Check_Cap_Grape()){
+        if(!val.Check_Cap_Grape(Textfield_Cap_Grape.getText())){
+            Textfield_Cap_Grape.setText("");
             Flag =false;
             items.add(Message[2]);
 
         }
-        if (!Check_Prc_Rose()){
+        if (!val.Check_Prc_Rose(Textfield_Prc_Rose.getText())){
+            Textfield_Prc_Rose.setText("");
             Flag = false;
             items.add(Message[3]);
         }
-        if(!Check_Prc_Noir()){
+        if(!val.Check_Prc_Noir(Textfield_Prc_Noir.getText())){
+            Textfield_Prc_Noir.setText("");
             Flag= false;
             items.add(Message[4]);
         }
-        if(!Check_Bko_Rose()){
+        if(!val.Check_Bko_Rose(Textfield_Bko_Rose.getText())){
+            Textfield_Bko_Rose.setText("");
             Flag = false;
             items.add(Message[5]);
         }
-        if(!Check_Bko_Noir()){
+        if(!val.Check_Bko_Noir(Textfield_Bko_Noir.getText())){
+            Textfield_Bko_Noir.setText("");
             Flag = false;
             items.add(Message[6]);
         }
@@ -264,129 +269,6 @@ public class functionCController {
         return Flag;
     }
 
-    private boolean Check_Week_Of_Year() {
-        String temp = Textfield_Week_Of_Year.getText();
-        try {
-            if (2301 > Integer.parseInt(temp) || 2315 < Integer.parseInt(temp)) {
-
-                Textfield_Week_Of_Year.setText("");
-                return false;
-            } else {
-
-                return true;
-            }
-        } catch (NumberFormatException e) {
-
-            Textfield_Week_Of_Year.setText("");
-            return false;
-        }
-
-    }
-    private boolean Check_Bko_Rose(){
-        String temp = Textfield_Bko_Rose.getText();
-        try {
-            if (0 > Integer.parseInt(temp)) {
-
-                Textfield_Bko_Rose.setText("");
-                return false;
-            } else {
-
-                return true;
-            }
-        } catch (NumberFormatException e) {
-
-            Textfield_Bko_Rose.setText("");
-            return false;
-        }
-    }
-    private boolean Check_Bko_Noir(){
-        String temp = Textfield_Bko_Noir.getText();
-        try {
-            if (0 > Integer.parseInt(temp)) {
-
-                Textfield_Bko_Noir.setText("");
-                return false;
-            } else {
-                return true;
-            }
-        } catch (NumberFormatException e) {
-
-            Textfield_Bko_Noir.setText("");
-            return false;
-        }
-    }
-    private boolean Check_Prc_Rose(){
-        String temp = Textfield_Prc_Rose.getText();
-        try {
-            if (1.0f > Float.parseFloat(temp)) {
-
-                Textfield_Prc_Rose.setText("");
-                return false;
-            } else {
-
-                return true;
-            }
-        } catch (NumberFormatException e) {
-
-            Textfield_Prc_Rose.setText("");
-            return false;
-        }
-    }
-
-    private boolean Check_Prc_Noir(){
-        String temp = Textfield_Prc_Noir.getText();
-        try {
-            if (1.0f > Float.parseFloat(temp)) {
-
-                Textfield_Prc_Noir.setText("");
-                return false;
-            } else {
-
-                return true;
-            }
-        } catch (NumberFormatException e) {
-
-            Textfield_Prc_Noir.setText("");
-            return false;
-        }
-    }
-
-    private boolean Check_Cap_Labor(){
-        String temp = Textfield_Cap_Labor.getText();
-        try{
-
-                if (0 > Integer.parseInt(temp) ) {
-
-                    Textfield_Cap_Labor.setText("");
-                    return false;
-                } else {
-
-                    return true;
-                }
-        }catch(NumberFormatException e) {
-
-            Textfield_Cap_Labor.setText("");
-            return false;
-        }
-    }
-    private boolean Check_Cap_Grape(){
-        String temp = Textfield_Cap_Grape.getText();
-        try{
-
-            if (0 > Integer.parseInt(temp) ) {
-
-                Textfield_Cap_Grape.setText("");
-                return false;
-            } else {
-
-                return true;
-            }
-        }catch(NumberFormatException e) {
-
-            Textfield_Cap_Grape.setText("");
-            return false;
-        }
-    }
 
 
     @FXML
@@ -394,7 +276,8 @@ public class functionCController {
         Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1.fxml")));
         Main.stage.setScene(scene);
     }
-    public void initialize() {
+    @FXML
+    public void getDefaultValue(){
 
     }
 
