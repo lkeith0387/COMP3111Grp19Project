@@ -1,11 +1,11 @@
 package src.main.java;
 
-import org.junit.Before;
 import org.junit.Test;
+import src.main.java.Function_C.Validation;
 
 import static org.junit.Assert.*;
 
-public class ValidationTest {
+public class Validation_Tester {
     private Validation val = new Validation();
 
 
@@ -16,9 +16,15 @@ public class ValidationTest {
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Week_Of_Year_InValid(){
+    public void Check_Week_Of_Year_InValid1(){
         boolean expected = false;
         boolean actual = val.Check_Week_Of_Year("1");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Week_Of_Year_InValid2(){
+        boolean expected = false;
+        boolean actual = val.Check_Week_Of_Year("10000");
         assertEquals(expected,actual);
     }
     @Test
