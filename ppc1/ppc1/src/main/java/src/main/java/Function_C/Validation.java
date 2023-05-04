@@ -1,11 +1,16 @@
-package src.main.java;
+package src.main.java.Function_C;
 
 
 /**
- * The functionCContoller class is the class to perform function C in pp
+ * The Validation class provides input validation for function C.
  */
 public class Validation {
 
+    /**Checks the input validation for input Week_Of_Year
+     * @param Week_Of_Year The week of year
+     * @return True for valid input<br>
+     *          False for invalid input
+     */
     public boolean Check_Week_Of_Year(String Week_Of_Year) {
 
         try {
@@ -24,6 +29,11 @@ public class Validation {
         }
 
     }
+    /**Checks the input validation for input Bko_Rose
+     * @param Bko_Rose The backorder volume of Rosé
+     * @return True for valid input<br>
+     *          False for invalid input
+     */
     public boolean Check_Bko_Rose(String Bko_Rose){
 
         try {
@@ -39,6 +49,11 @@ public class Validation {
             return false;
         }
     }
+    /**Checks the input validation for input Bko_Noir
+     * @param Bko_Noir The backorder volume of P-Noir
+     * @return True for valid input<br>
+     *          False for invalid input
+     */
     public boolean Check_Bko_Noir(String Bko_Noir){
 
         try {
@@ -51,6 +66,11 @@ public class Validation {
             return false;
         }
     }
+    /**Checks the input validation for input Prc_Rose
+     * @param Prc_Rose The price of Rosé
+     * @return True for valid input<br>
+     *          False for invalid input
+     */
     public boolean Check_Prc_Rose(String Prc_Rose){
         try {
             if (1.0f > Float.parseFloat(Prc_Rose)) {
@@ -66,6 +86,11 @@ public class Validation {
         }
     }
 
+    /**Checks the input validation for input Prc_Noir
+     * @param Prc_Noir The price of P-Noir
+     * @return True for valid input<br>
+     *          False for invalid input
+     */
     public boolean Check_Prc_Noir(String Prc_Noir){
 
         try {
@@ -79,6 +104,11 @@ public class Validation {
         }
     }
 
+    /**Checks the input validation for input Cap_Labor
+     * @param Cap_Labor The capacity of Labor
+     * @return True for valid input<br>
+     *          False for invalid input
+     */
     public boolean Check_Cap_Labor(String Cap_Labor){
         try{
 
@@ -93,6 +123,12 @@ public class Validation {
             return false;
         }
     }
+
+    /**Checks the input validation for input Cap_Grape
+     * @param Cap_Grape The capacity of grape
+     * @return True for valid input<br>
+     *          False for invalid input
+     */
     public boolean Check_Cap_Grape(String Cap_Grape){
         try{
             if (1 > Integer.parseInt(Cap_Grape) ) {
