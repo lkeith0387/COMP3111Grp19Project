@@ -1,10 +1,7 @@
 package src.main.java;
 
-import org.junit.Test;
-
 public class Calculator {
 	
-	@Test
 	public int[] Optimization(int cap_labor, int cap_grape, float prc_rose, float prc_noir) {
 		int x = 0;
 		int opt_Rose = 0 , opt_Noir = 0;
@@ -34,7 +31,6 @@ public class Calculator {
     	int[] a = {opt_Rose,opt_Noir,maxRevenue};
 		return a;
 	}
-	@Test
     public int Calculation(int Num_Rose,int Num_Noir, float prc_rose , float prc_noir) {
     	float b = prc_rose*Num_Rose + prc_noir*Num_Noir;
     	int c = (int)b;
