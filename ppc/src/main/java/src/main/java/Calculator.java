@@ -1,7 +1,23 @@
 package src.main.java;
 
+
+
+
+
+/**
+ * A Calculator class used to do all the calculation on optimization
+ * @author Cheung Kwok Wai, Steven
+ * @version 1.0
+ */
 public class Calculator {
-	
+	/**
+	 * Calculate the optimize solution of opt_Rose,opt_Noir
+	 * @param cap_labor the capacity of labor force
+	 * @param cap_grape the capacity of grapes
+	 * @param prc_rose the price of the wine named rose
+	 * @param prc_noir the price of the wine named p-noir
+	 * @return a integer array insist of opt_Rose, opt_Noir, maxRevenue
+	 */
 	public int[] Optimization(int cap_labor, int cap_grape, float prc_rose, float prc_noir) {
 		int x = 0;
 		int opt_Rose = 0 , opt_Noir = 0;
@@ -31,6 +47,15 @@ public class Calculator {
     	int[] a = {opt_Rose,opt_Noir,maxRevenue};
 		return a;
 	}
+	
+	/**
+	 * Calculation based multiplication and addition to calculate the revenue
+	 * @param Num_Rose Number of Rose should be produced
+	 * @param Num_Noir Number of P-Noir should be produced
+	 * @param prc_rose prc_rose the price of the wine named rose
+	 * @param prc_noir prc_noir the price of the wine named p-noir
+	 * @return revenue
+	 */
     public int Calculation(int Num_Rose,int Num_Noir, float prc_rose , float prc_noir) {
     	float b = prc_rose*Num_Rose + prc_noir*Num_Noir;
     	int c = (int)b;

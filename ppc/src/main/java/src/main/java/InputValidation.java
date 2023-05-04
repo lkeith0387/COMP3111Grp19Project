@@ -1,5 +1,7 @@
 package src.main.java;
-
+/**
+ * A class to verify if the input are in valid format.
+ */
 public class InputValidation {
 	
 	public boolean Check_Num_Week(String Num_Week) {

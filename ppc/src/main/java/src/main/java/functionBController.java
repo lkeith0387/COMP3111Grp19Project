@@ -13,6 +13,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
 
+
+/**
+ * A Controller for function B in ppc1 calculator project.
+ * @author Cheung Kwok Wai, Steven
+ * @version 1.0
+ */
+
+
+
 public class functionBController {
 
     @FXML
@@ -248,6 +257,11 @@ public class functionBController {
     int cap_labor =0, cap_grape=0, num_week =0;//maxRevenue=0;
     float prc_rose=0, prc_noir=0;
     
+   
+  
+    /**
+     * Get user input.
+     */
     public void Input_Data() {
     	num_week = Integer.parseInt(Num_Week.getText());
     	cap_labor = Integer.parseInt(Cap_Labor.getText());
@@ -255,7 +269,16 @@ public class functionBController {
     	prc_rose = Float.parseFloat(Prc_Rose.getText());
     	prc_noir = Float.parseFloat(Prc_Noir.getText());
     }
-    
+    /**
+     * Output text in textfields.
+     * @param opt_Rose Optimal mix of Rose
+     * @param opt_Noir Optimal mix of P-Noir
+     * @param opt_total Optimal total mix of wines                
+     * @param maxRevenue The maxRevenue calculated
+     * @param sur_labor Surplus of labor force
+     * @param sur_grape Surplus of Grape
+     * @param sur_total Total surplus of labor force and grape
+     */
     public void Output_Data(int opt_Rose, int opt_Noir, int opt_total,int maxRevenue,int sur_labor,int sur_grape,int sur_total){
     	or_Prod_Vol_Rose.setText(Integer.toString(opt_Rose));
     	or_Prod_Vol_Noir.setText(Integer.toString(opt_Noir));
@@ -265,6 +288,13 @@ public class functionBController {
     	or_sur_Grape.setText(Integer.toString(sur_grape));
     	or_sur_Total.setText(Integer.toString(sur_total));
     }
+    
+    /**
+     * Handles mouse click event on "run" button
+     * @param event 
+     */
+    
+    
     
     @FXML 
     public void toclickB(ActionEvent event) {   ///function structure complete.
@@ -315,6 +345,13 @@ public class functionBController {
     	message(opt_Rose,opt_Noir,opt_total);
     }	
     
+    
+    /**
+     * displaying message in listviewB of warning messages
+     * @param opt_Rose the optimal mix of rose
+     * @param opt_Noir the optimal mix of P-Noir
+     * @param opt_total the total optimal mix of both
+     */
     public void message(int opt_Rose,int opt_Noir, int opt_total) {
     	ObservableList<String> items = FXCollections.observableArrayList();
     	if(5000 < opt_total) {
@@ -327,7 +364,10 @@ public class functionBController {
     }
     
     
-    
+    /**
+     * A function to call an extra class to verify if the input are in valid formats.
+     * @return a boolean whether the test passed.
+     */
     public boolean datainvalid() {
     	boolean result = true;
     	ObservableList<String> items = FXCollections.observableArrayList();
@@ -362,6 +402,11 @@ public class functionBController {
     	return result;
     }
        
+    
+    /**
+     * Handle mouse click event on "Exit" button
+     * @param event
+     */
     public void toexitB(ActionEvent event) {
     	Main.stage.setScene(Main.scene);
     }

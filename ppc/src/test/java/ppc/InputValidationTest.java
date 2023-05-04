@@ -6,6 +6,12 @@ import src.main.java.InputValidation;
 
 import static org.junit.Assert.*;
 
+/**
+ * A class to check different valid/invalid inputs of different variables. e.g.Num_Week
+ * @author Steven
+ *
+ */
+
 public class InputValidationTest {
 	private InputValidation valid = new InputValidation();
 	

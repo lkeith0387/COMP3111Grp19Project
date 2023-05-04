@@ -6,6 +6,11 @@ import src.main.java.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * A class to test if different values pass the calculation in the Calculator class.
+ * @author Steven
+ *
+ */
 
 public class CalculatorTest {
 	
