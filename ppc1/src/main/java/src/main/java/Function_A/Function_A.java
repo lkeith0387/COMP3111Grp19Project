@@ -12,6 +12,9 @@ public class Function_A {
     private int Fixed_Costs;
     
     
+    /**Calculates the optimal volume of two wines (Rosé and P-Noir), then used them to calculate VCL, Sales Revenue, Gross Profit and Profit Margin.
+     * @return A Result object that stores the returns optimal volume of Rosé, optimal volume of P-Noir, optimized total gross profits, optimized profit margin
+     */
     public Result Get_Result(){
     	int Opt_Rose = 0 ;
         int Opt_Noir = 0 ;
@@ -23,16 +26,21 @@ public class Function_A {
         Opt_Rose += Result[0];
         Opt_Noir += Result[1];
         
-        double VCL = ((Opt_Rose * 5 + Opt_Noir * 12) * Labor_Rate);						 		//VCL = Variable Cost of Labor
-        int Sales_Revenue = (int) (Math.round(Opt_Rose * Prc_Rose + Opt_Noir * Prc_Noir)); 		//Sales Revenue = Total Revenue
-        int Gross_Profit = (int) (Math.round(Sales_Revenue - VCL - Fixed_Costs)); 			 	//Gross Profit = Opt_Profit
-        double Opt_Margin_NotConv = (((double)Gross_Profit) * 100 / Sales_Revenue);
-        double Opt_Margin = roundAvoid(Opt_Margin_NotConv, 1);
+        double VCL = ((Opt_Rose * 5 + Opt_Noir * 12) * Labor_Rate);						 		// VCL = Variable Cost of Labor
+        int Sales_Revenue = (int) (Math.round(Opt_Rose * Prc_Rose + Opt_Noir * Prc_Noir)); 		// Sales Revenue = Total Revenue
+        int Gross_Profit = (int) (Math.round(Sales_Revenue - VCL - Fixed_Costs)); 			 	// Gross Profit = Opt_Profit
+        double Opt_Margin_NotConv = (((double)Gross_Profit) * 100 / Sales_Revenue);				// Profit Margin = Opt_Margin
+        double Opt_Margin = roundTwoSigFig(Opt_Margin_NotConv, 1);								// Round Opt_Margin_NotConv to the nearest significant figure
         return new Result (Opt_Rose, Opt_Noir, Gross_Profit, Opt_Margin);
-        //Show_Message(Opt_Rose,Opt_Noir);
     }
     
-    public static double roundAvoid(double value, int places) {
+    
+    /**
+     * @param value Optimal Margin that has not been converted to the nearest significant figure
+     * @param places Round to how many significant figure
+     * @return The rounded version of optimal margin
+     */
+    public static double roundTwoSigFig(double value, int places) {
         double scale = Math.pow(10, places);
         return Math.round(value * scale) / scale;
     }
