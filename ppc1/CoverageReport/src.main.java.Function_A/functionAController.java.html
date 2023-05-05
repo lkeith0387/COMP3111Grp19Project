@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>functionAController.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">ppc1 (6 May 2023 3:38:35 am)</a> &gt; <a href="../../index.html" class="el_group">ppc1</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">src.main.java.Function_A</a> &gt; <span class="el_source">functionAController.java</span></div><h1>functionAController.java</h1><pre class="source lang-java linenums">package src.main.java.Function_A;
+
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
+import src.main.java.Main;
+
+/**
+ * functionAContoller class is the controller to the control the GUL of function A
+ */
+<span class="nc" id="L16">public class functionAController {</span>
+
+    @FXML
+    private TextField Textfield_Cap_Grape;
+
+    @FXML
+    private TextField Textfield_Cap_Labor;
+
+    @FXML
+    private TextField Textfield_Fixed_Costs;
+
+    @FXML
+    private Line HLine2;
+
+    @FXML
+    private Line HLine3;
+
+    @FXML
+    private Line HLine4;
+
+    @FXML
+    private Line HLine_1;
+
+    @FXML
+    private TextField Textfield_Num_Week;
+
+    @FXML
+    private TextField Textfield_Prc_Noir;
+
+    @FXML
+    private TextField Textfield_Prc_Rose;
+
+    @FXML
+    private Line VLine1;
+
+    @FXML
+    private Line VLine2;
+
+    @FXML
+    private Button button_exit1;
+
+    @FXML
+    private Button button_run1;
+
+    @FXML
+    private Label data_input_caption1;
+
+    @FXML
+    private Label data_input_caption2;
+
+    @FXML
+    private Label data_input_caption2a;
+
+    @FXML
+    private Label data_input_caption2b;
+
+    @FXML
+    private Label data_input_caption3;
+
+    @FXML
+    private Label data_input_caption3a;
+
+    @FXML
+    private Label data_input_caption3b;
+
+    @FXML
+    private Label data_input_caption4;
+
+    @FXML
+    private Label data_input_heading1;
+
+    @FXML
+    private Label form_heading1;
+
+    @FXML
+    private AnchorPane label_col_heading2;
+
+    @FXML
+    private Label label_sysmsg1;
+
+    @FXML
+    private Label opt_r_caption1;
+
+    @FXML
+    private Label opt_r_caption1a;
+
+    @FXML
+    private Label opt_r_caption1b;
+
+    @FXML
+    private Label opt_r_caption1c;
+
+    @FXML
+    private Label opt_r_caption2;
+
+    @FXML
+    private Label opt_r_caption3;
+
+    @FXML
+    private Label opt_result_heading1;
+
+    @FXML
+    private TextField or_Gross_Profit;
+
+    @FXML
+    private TextField or_Prod_Vol_Noir;
+
+    @FXML
+    private TextField or_Prod_Vol_Rose;
+
+    @FXML
+    private TextField or_Prod_Vol_Total;
+
+    @FXML
+    private TextField or_Profit_Margin;
+
+    @FXML
+    private Line vLine3;
+    
+    @FXML
+    private ListView&lt;String&gt; Or_Message;
+    
+
+    /**
+     * Displays the result at in &quot;Optimized Result&quot; section
+     * @param Opt_Rose Number of litres to be produced for Rosé
+     * @param Opt_Noir Number of litres to be produced for P-Noir
+     * @param Opt_Profit Optimized total gross profits before tax could be generated for the year
+     * @param Opt_Margin Optimized profit margin
+     */
+    public void Display_Result(int Opt_Rose, int Opt_Noir, int Opt_Profit, double Opt_Margin){
+<span class="nc" id="L147">    	or_Prod_Vol_Rose.setText(String.format(&quot;%,8d%n&quot;,Opt_Rose));</span>
+<span class="nc" id="L148">    	or_Prod_Vol_Noir.setText(String.format(&quot;%,8d%n&quot;,Opt_Noir));</span>
+<span class="nc" id="L149">        or_Prod_Vol_Total.setText(String.format(&quot;%,8d%n&quot;,Opt_Noir+Opt_Rose));</span>
+<span class="nc" id="L150">        or_Gross_Profit.setText(String.format(&quot;%,8d%n&quot;, Opt_Profit));</span>
+<span class="nc" id="L151">        or_Profit_Margin.setText(String.format(&quot;%,.1f&quot;, Opt_Margin));</span>
+<span class="nc" id="L152">    }</span>
+    
+    
+    /**
+     * Handles the click event of &quot;Run&quot; button.
+     * @param actionEvent
+     */
+    @FXML
+    public void To_Click(ActionEvent actionEvent) {
+<span class="nc" id="L161">    	 String[] input = new String[7];</span>
+<span class="nc" id="L162">         input[0] = Textfield_Num_Week.getText();</span>
+<span class="nc" id="L163">         input[1] = Textfield_Cap_Labor.getText();</span>
+<span class="nc" id="L164">         input[2] = Textfield_Cap_Grape.getText();</span>
+<span class="nc" id="L165">         input[3] = Textfield_Prc_Rose.getText();</span>
+<span class="nc" id="L166">         input[4] = Textfield_Prc_Noir.getText();</span>
+<span class="nc" id="L167">         input[5] = Textfield_Fixed_Costs.getText();</span>
+<span class="nc" id="L168">         Process_Calculation(input);     </span>
+<span class="nc" id="L169">    }</span>
+    
+    
+    /**
+     * Processes the calculation with the input data by calling methods in Function_A class.The calculation stops if encountered invalid input(s).
+     * @param input Contains Week of the year, Capacity of Labor, Capacity of Grape, Price of Rosé, Price of P-Noir, Fixed Costs (in ascending order) 
+     */
+    private void Process_Calculation(String[] input) {
+<span class="nc" id="L177">        Function_A func = new Function_A();</span>
+<span class="nc" id="L178">        ObservableList&lt;String&gt; Message = func.Data_Validation(input);</span>
+<span class="nc bnc" id="L179" title="All 2 branches missed.">        if(Message.size()&gt;0){</span>
+<span class="nc" id="L180">            Display_Message(Message);</span>
+<span class="nc" id="L181">            return;</span>
+        }
+<span class="nc" id="L183">        func.Get_Data(input);</span>
+<span class="nc" id="L184">        Result result = func.Get_Result();</span>
+<span class="nc" id="L185">        Display_Result(result.Opt_Rose,result.Opt_Noir,result.Opt_Profit,result.Opt_Margin);</span>
+<span class="nc" id="L186">        Message = func.Get_Warning_Message(result.Opt_Rose,result.Opt_Noir);</span>
+<span class="nc" id="L187">        Display_Message(Message);</span>
+<span class="nc" id="L188">    }</span>
+
+    
+    /**
+     * Displays the message in the format of ListView and display on &quot;System Messages/Warnings/Reminders&quot; section.
+     * @param Message
+     */
+    public void Display_Message(ObservableList&lt;String&gt; Message) {
+<span class="nc" id="L196">        Or_Message.setItems(Message);</span>
+<span class="nc" id="L197">    }</span>
+
+
+    /**Handle the click event of the &quot;Exit&quot; button.
+     * @param event
+     * @throws java.io.IOException
+     */
+    @FXML
+    void To_Exit(ActionEvent event) throws  java.io.IOException{
+<span class="nc" id="L206">        Scene scene=new Scene(FXMLLoader.load(getClass().getResource(&quot;/ppc1.fxml&quot;)));</span>
+<span class="nc" id="L207">        Main.stage.setScene(scene);</span>
+<span class="nc" id="L208">    }</span>
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span>ppc1 (6 May 2023 3:38:35 am)</div></body></html>

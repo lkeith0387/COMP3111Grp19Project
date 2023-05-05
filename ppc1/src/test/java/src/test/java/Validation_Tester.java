@@ -9,16 +9,17 @@ public class Validation_Tester {
     private Validation val = new Validation();
 
 
+    
     @Test
     public void Check_Num_Week_Valid() {
         boolean expected = true;
-        boolean actual = val.Check_Num_Week("2302");
+        boolean actual = val.Check_Num_Week("2");
         assertEquals(expected,actual);
     }
     @Test
     public void Check_Num_Week_InValid1(){
         boolean expected = false;
-        boolean actual = val.Check_Num_Week("1");
+        boolean actual = val.Check_Num_Week("01");
         assertEquals(expected,actual);
     }
     @Test
@@ -30,13 +31,13 @@ public class Validation_Tester {
     @Test
     public void Check_Num_Week_Upper_Bound(){
         boolean expected = true;
-        boolean actual = val.Check_Num_Week("2315");
+        boolean actual = val.Check_Num_Week("15");
         assertEquals(expected,actual);
     }
     @Test
     public void Check_Num_Week_Lower_Bound(){
         boolean expected = true;
-        boolean actual = val.Check_Num_Week("2301");
+        boolean actual = val.Check_Num_Week("1");
         assertEquals(expected,actual);
     }
     @Test
@@ -48,22 +49,22 @@ public class Validation_Tester {
     @Test
     public void Check_Num_Week_Invalid_Format2(){
         boolean expected = false;
-        boolean actual = val.Check_Num_Week("7.7");
+        boolean actual = val.Check_Num_Week("6.7");
         assertEquals(expected,actual);
     }
 
-
+    
    
     @Test
     public void Check_Prc_Rose_Valid() {
         boolean expected = true;
-        boolean actual = val.Check_Prc_Rose("2.01");
+        boolean actual = val.Check_Prc_Rose("6.07");
         assertEquals(expected,actual);
     }
     @Test
     public void Check_Prc_Rose_Invalid(){
         boolean expected= false;
-        boolean actual = val.Check_Prc_Rose("-1.26");
+        boolean actual = val.Check_Prc_Rose("-0.89");
         assertEquals(expected,actual);
     }
     @Test
@@ -75,13 +76,13 @@ public class Validation_Tester {
     @Test
     public void Check_Prc_Rose_Invalid_Format1(){
         boolean expected= false;
-        boolean actual = val.Check_Prc_Rose("asd");
+        boolean actual = val.Check_Prc_Rose("xyz");
         assertEquals(expected,actual);
     }
     @Test
     public void Check_Prc_Rose_Invalid_Format2(){
         boolean expected= false;
-        boolean actual = val.Check_Prc_Rose("0.2f");
+        boolean actual = val.Check_Prc_Rose("0.4f");
         assertEquals(expected,actual);
     }
     
@@ -118,6 +119,7 @@ public class Validation_Tester {
     }
     
     
+    
     @Test
     public void Check_Cap_Labor_Valid() {
         boolean expected = true;
@@ -151,6 +153,7 @@ public class Validation_Tester {
     }
     
     
+    
     @Test
     public void Check_Cap_Grape_Valid() {
         boolean expected = true;
@@ -180,6 +183,40 @@ public class Validation_Tester {
     public void Check_Cap_Grape_Invalid_Format2(){
         boolean expected = false;
         boolean actual = val.Check_Cap_Grape("7.7");
+        assertEquals(expected,actual);
+    }
+
+    
+    
+    @Test
+    public void Check_Fixed_Costs_Valid() {
+        boolean expected = true;
+        boolean actual = val.Check_Fixed_Costs("10000");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Fixed_Costs_InValid(){
+        boolean expected = false;
+        boolean actual = val.Check_Fixed_Costs("-7");
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void Check_Fixed_Costs_Bound(){
+        boolean expected = true;
+        boolean actual = val.Check_Fixed_Costs("0");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Fixed_Costs_Invalid_Format1(){
+        boolean expected = false;
+        boolean actual = val.Check_Fixed_Costs("Ahduhf-7");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Fixed_Costs_Invalid_Format2(){
+        boolean expected = false;
+        boolean actual = val.Check_Fixed_Costs("6.6");
         assertEquals(expected,actual);
     }
 
