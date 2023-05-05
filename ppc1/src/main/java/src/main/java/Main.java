@@ -15,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage=primaryStage;
-         scene=new Scene(FXMLLoader.load(getClass().getResource("ppc1.fxml")));
+         scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1.fxml")));
        stage.setScene(scene);
         stage.show();
     }
