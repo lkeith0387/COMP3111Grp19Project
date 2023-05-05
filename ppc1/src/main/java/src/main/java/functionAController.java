@@ -188,6 +188,7 @@ public class functionAController {
     }
     
     //Missing solver part and determine how to calculate the profit
+    @FXML
     public void toclick(ActionEvent actionEvent) {
         if(!Data_Validation()){
             return;
@@ -422,7 +423,7 @@ public class functionAController {
     }
     
     @FXML
-    void To_Exit(ActionEvent event) throws  java.io.IOException{
+    void toexit(ActionEvent event) throws  java.io.IOException{
         Scene scene=new Scene(FXMLLoader.load(getClass().getResource("ppc1.fxml")));
         Main.stage.setScene(scene);
     }
