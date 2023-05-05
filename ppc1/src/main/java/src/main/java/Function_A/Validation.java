@@ -1,13 +1,19 @@
 package src.main.java.Function_A;
 
+/**
+ * Validation class use to validate input from Function_A.
+ */
 public class Validation {
-	/**
-     * Field validation for Num_Week variable, check if the input is smaller than 2301 or greater than 2315
-     * @return Return true if the input is within valid range, otherwise, return false
+	
+	
+    /**
+     * Checks if the input of Num_Week variable is invalid (smaller than 1 or greater than 15)
+     * @param Num_Week Number of weeks
+     * @return True for valid input, false otherwise
      */
-    public boolean Check_Week_Of_Year(String Week_Of_Year) {
+    public boolean Check_Num_Week(String Num_Week) {
         try {
-            if (2301 > Integer.parseInt(Week_Of_Year) || 2315 < Integer.parseInt(Week_Of_Year)) {
+            if (1 > Integer.parseInt(Num_Week) || 15 < Integer.parseInt(Num_Week)) {
                 return false;
             } else {
                 return true;
@@ -18,9 +24,11 @@ public class Validation {
 
     }
     
+    
     /**
-     * Field validation for Cap_Labor variable, check if the input is less than 0
-     * @return Return true if the input is within valid range, otherwise, return false
+     * Checks if the input of Cap_Labor variable is invalid (smaller than 0)
+     * @param Cap_Labor Labor resource planned for the production cycle
+     * @return True for valid input, false otherwise
      */
     public boolean Check_Cap_Labor(String Cap_Labor) {
         try {
@@ -35,9 +43,11 @@ public class Validation {
 
     }
     
+    
     /**
-     * Field validation for Cap_Grape variable, check if the input is less than 0
-     * @return Return true if the input is within valid range, otherwise, return false
+     * Checks if the input of Cap_Grape variable is invalid (smaller than 0)
+     * @param Cap_Grape Grape resource planned for the production cycle
+     * @return True for valid input, false otherwise
      */
     public boolean Check_Cap_Grape(String Cap_Grape) {
         try {
@@ -54,8 +64,9 @@ public class Validation {
     
    
     /**
-     * Field validation for Prc_Rose variable, check if the input is less than 1.0
-     * @return Return true if the input is within valid range, otherwise, return false
+     * Checks if the input of Prc_Rose variable is invalid (smaller than 1.0)
+     * @param Prc_Rose Price of Rose
+     * @return True for valid input, false otherwise
      */
     public boolean Check_Prc_Rose(String Prc_Rose){
         try {
@@ -69,9 +80,11 @@ public class Validation {
         }
     }
 
+    
     /**
-     * Field validation for Prc_Noir variable, check if the input is less than 1.0
-     * @return Return true if the input is within valid range, otherwise, return false
+     * Checks if the input of Prc_Noir variable is invalid (smaller than 1.0)
+     * @param Prc_Noir Price of P-Noir
+     * @return True for valid input, false otherwise
      */
     public boolean Check_Prc_Noir(String Prc_Noir){
         try {
@@ -85,9 +98,11 @@ public class Validation {
         }
     }
     
+    
     /**
-     * Field validation for Prc_Noir variable, check if the input is less than 0
-     * @return Return true if the input is within valid range, otherwise, return false
+     * Checks if the input of Fixed_Costs variable is invalid (smaller than 0)
+     * @param Fixed_Costs Total fixed costs of operating and manufacturing overheads
+     * @return True for valid input, false otherwise
      */
     public boolean Check_Fixed_Costs(String Fixed_Costs){
         try {

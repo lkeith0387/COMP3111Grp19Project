@@ -16,7 +16,7 @@
   <children>
     <AnchorPane fx:id="label_col_heading2" maxHeight="-1.0" maxWidth="-1.0" prefHeight="519.0" prefWidth="788.0" VBox.vgrow="ALWAYS">
          <children>
-            <TextField fx:id="Textfield_Week_Of_Year" layoutX="222.0" layoutY="95.0" prefHeight="25.0" prefWidth="99.0" promptText="Num_Week" />
+            <TextField fx:id="Textfield_Num_Week" layoutX="222.0" layoutY="95.0" prefHeight="25.0" prefWidth="99.0" promptText="Num_Week" />
             <Label fx:id="data_input_heading1" layoutX="143.0" layoutY="59.0" text="DATA INPUT" />
             <Label fx:id="data_input_caption2a" layoutX="133.0" layoutY="147.0" text="Labor (minutes)" />
             <Label fx:id="form_heading1" layoutX="244.0" layoutY="8.0" text="A2.2.A Annual Forecast by Gross Profit">

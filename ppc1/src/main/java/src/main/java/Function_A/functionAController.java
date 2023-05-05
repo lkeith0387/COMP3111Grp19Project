@@ -11,9 +11,7 @@ import javafx.scene.shape.Line;
 import src.main.java.Main;
 
 /**
- * Date: 2023-05-05
- * @author Lau Nga Sze
- * @version 1.0
+ * functionAContoller class is the controller to the control the GUL of function A
  */
 public class functionAController {
 
@@ -39,7 +37,7 @@ public class functionAController {
     private Line HLine_1;
 
     @FXML
-    private TextField Textfield_Week_Of_Year;
+    private TextField Textfield_Num_Week;
 
     @FXML
     private TextField Textfield_Prc_Noir;
@@ -138,19 +136,30 @@ public class functionAController {
     private ListView<String> Or_Message;
     
 
+    /**
+     * Displays the result at in "Optimized Result" section
+     * @param Opt_Rose Number of litres to be produced for Rosé
+     * @param Opt_Noir Number of litres to be produced for P-Noir
+     * @param Opt_Profit Optimized total gross profits before tax could be generated for the year
+     * @param Opt_Margin Optimized profit margin
+     */
     public void Display_Result(int Opt_Rose, int Opt_Noir, int Opt_Profit, double Opt_Margin){
     	or_Prod_Vol_Rose.setText(String.format("%,8d%n",Opt_Rose));
     	or_Prod_Vol_Noir.setText(String.format("%,8d%n",Opt_Noir));
         or_Prod_Vol_Total.setText(String.format("%,8d%n",Opt_Noir+Opt_Rose));
         or_Gross_Profit.setText(String.format("%,8d%n", Opt_Profit));
-        or_Profit_Margin.setText(String.format("%,.2f", Opt_Margin));
+        or_Profit_Margin.setText(String.format("%,.1f", Opt_Margin));
     }
     
     
+    /**
+     * Handles the click event of "Run" button.
+     * @param actionEvent
+     */
     @FXML
     public void To_Click(ActionEvent actionEvent) {
     	 String[] input = new String[7];
-         input[0] = Textfield_Week_Of_Year.getText();
+         input[0] = Textfield_Num_Week.getText();
          input[1] = Textfield_Cap_Labor.getText();
          input[2] = Textfield_Cap_Grape.getText();
          input[3] = Textfield_Prc_Rose.getText();
@@ -160,6 +169,10 @@ public class functionAController {
     }
     
     
+    /**
+     * Processes the calculation with the input data by calling methods in Function_A class.The calculation stops if encountered invalid input(s).
+     * @param input Contains Week of the year, Capacity of Labor, Capacity of Grape, Price of Rosé, Price of P-Noir, Fixed Costs (in ascending order) 
+     */
     private void Process_Calculation(String[] input) {
         Function_A func = new Function_A();
         ObservableList<String> Message = func.Data_Validation(input);
@@ -174,8 +187,10 @@ public class functionAController {
         Display_Message(Message);
     }
 
-    /**Displays the message on the ListView of the panel.
-     * @param Message A List of Message that displays on the ListView
+    
+    /**
+     * Displays the message in the format of ListView and display on "System Messages/Warnings/Reminders" section.
+     * @param Message
      */
     public void Display_Message(ObservableList<String> Message) {
         Or_Message.setItems(Message);

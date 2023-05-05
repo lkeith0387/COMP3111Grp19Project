@@ -4,7 +4,7 @@
 package src.main.java.Function_A;
 
 /**
- *The Solver class provides solutions for calculation of some outputs in functions, including optimal volume of Ros�, optimal volume of P-Noir, and the revenue obtain with specified volume of Ros� and P-Noir.
+ * Solver class provides solutions for calculation of some outputs in functions, including optimal volume of Rose and P-Noir, and the revenue obtain with specified volume of Rose and  P-Noir.
  */
 public class Solver {
     private int Cap_Labor = 0;
@@ -13,10 +13,11 @@ public class Solver {
     private float Prc_Noir = 0 ;
 
 
-    /**Initializes a new Solver object that contains information on the capacity of Labor and Grape and the price of Ros� and P-Noir.
+    /**
+     * Initializes a new Solver object that contains information on the capacity of Labor and Grape and the price of Rose and P-Noir.
      * @param Cap_Labor  The capacity of Labor
      * @param Cap_Grape The capacity of Grape
-     * @param Prc_Rose The price of Ros�
+     * @param Prc_Rose The price of Rose
      * @param Prc_Noir The price of P-Noir
      */
     //private int Production_Capacity_Limit = 0;
@@ -31,10 +32,10 @@ public class Solver {
         //Man_Power_Limit = Num_week * 37.5;
     }
 
-    /**Calculates the optimal solution of volume of Ros� and P-Noir to obtain the highest revenue and store the result into an int array.
-     * @return  int[0]-The optimal volume of Ros�
+    /**
+     * Calculates the optimal solution of volume of Rose and P-Noir to obtain the highest revenue and store the result into an int array.
+     * @return  int[0]-The optimal volume of Rose
      *          int[1]-The optimal volume of P-Noir
-     *
      */
     public int[] Opt_Solution() {
         float Max_Revenue = 0;
@@ -63,10 +64,11 @@ public class Solver {
         return result;
     }
 
-    /**Calculates the revenue obtained with specified volume of Ros� and P-Noir.
-     * @param Num_Rose Volume of Ros�
+    /**
+     * Calculates the revenue obtained with specified volume of Rose and P-Noir.
+     * @param Num_Rose Volume of Rose
      * @param Num_Noir  Volume of P-Noir
-     * @return The revenue obtained with specified volume of Ros� and P-Noir
+     * @return The revenue obtained with specified volume of Rose and P-Noir
      */
     public  float Calculation(int Num_Rose,int Num_Noir){
         return Prc_Rose*Num_Rose + Prc_Noir*Num_Noir;

@@ -10,45 +10,45 @@ public class Validation_Tester {
 
 
     @Test
-    public void Check_Week_Of_Year_Valid() {
+    public void Check_Num_Week_Valid() {
         boolean expected = true;
-        boolean actual = val.Check_Week_Of_Year("2302");
+        boolean actual = val.Check_Num_Week("2302");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Week_Of_Year_InValid1(){
+    public void Check_Num_Week_InValid1(){
         boolean expected = false;
-        boolean actual = val.Check_Week_Of_Year("1");
+        boolean actual = val.Check_Num_Week("1");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Week_Of_Year_InValid2(){
+    public void Check_Num_Week_InValid2(){
         boolean expected = false;
-        boolean actual = val.Check_Week_Of_Year("10000");
+        boolean actual = val.Check_Num_Week("10000");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Week_Of_Year_Upper_Bound(){
+    public void Check_Num_Week_Upper_Bound(){
         boolean expected = true;
-        boolean actual = val.Check_Week_Of_Year("2315");
+        boolean actual = val.Check_Num_Week("2315");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Week_Of_Year_Lower_Bound(){
+    public void Check_Num_Week_Lower_Bound(){
         boolean expected = true;
-        boolean actual = val.Check_Week_Of_Year("2301");
+        boolean actual = val.Check_Num_Week("2301");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Week_Of_Year_Invalid_Format1(){
+    public void Check_Num_Week_Invalid_Format1(){
         boolean expected = false;
-        boolean actual = val.Check_Week_Of_Year("Ahduhf-7");
+        boolean actual = val.Check_Num_Week("Ahduhf-7");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Week_Of_Year_Invalid_Format2(){
+    public void Check_Num_Week_Invalid_Format2(){
         boolean expected = false;
-        boolean actual = val.Check_Week_Of_Year("7.7");
+        boolean actual = val.Check_Num_Week("7.7");
         assertEquals(expected,actual);
     }
 

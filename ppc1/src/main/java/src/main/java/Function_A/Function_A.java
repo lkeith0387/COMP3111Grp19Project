@@ -3,8 +3,11 @@ package src.main.java.Function_A;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * Function_A class is used to perform compute the optimal mix of wines to be produced in the year to maximize the gross profit of the winery
+ */
 public class Function_A {
-	private int Week_Of_Year;
+	private int Num_Week;
     private int Cap_Labor;
     private int Cap_Grape;
     private float Prc_Rose;
@@ -12,7 +15,8 @@ public class Function_A {
     private int Fixed_Costs;
     
     
-    /**Calculates the optimal volume of two wines (Rosé and P-Noir), then used them to calculate VCL, Sales Revenue, Gross Profit and Profit Margin.
+    /**
+     * Calculates the optimal volume of two wines (Rosé and P-Noir), then used them to calculate VCL, Sales Revenue, Gross Profit and Profit Margin.
      * @return A Result object that stores the returns optimal volume of Rosé, optimal volume of P-Noir, optimized total gross profits, optimized profit margin
      */
     public Result Get_Result(){
@@ -45,8 +49,13 @@ public class Function_A {
         return Math.round(value * scale) / scale;
     }
     
+    
+    /**
+     * Converts an array of input into numeric data and stores in the fields of the class.
+     * @param input Contains Number of weeks, Capacity of Labor, Capacity of Grape, Price of Rosé, Price of P-Noir, Fixed Costs (in ascending order) 
+     */
     public void Get_Data(String[] input){
-        Week_Of_Year = Integer.parseInt(input[0]);
+        Num_Week = Integer.parseInt(input[0]);
         Cap_Labor = Integer.parseInt(input[1]);
         Cap_Grape = Integer.parseInt(input[2]);
         Prc_Rose = Float.parseFloat(input[3]);
@@ -54,6 +63,13 @@ public class Function_A {
         Fixed_Costs = Integer.parseInt(input[5]);
     }
     
+    
+    /**
+     * Checks whether the optimal solution of the volume of Rosé and P-Noir will lead to abnormal situation and produces warning messages for abnormal situations.
+     * @param Opt_Rose
+     * @param Opt_Noir
+     * @return A list of warning messages caused by the optimal solution. The list will be empty if there is no abnormal situation happened.
+     */
     public ObservableList<String> Get_Warning_Message(int Opt_Rose, int Opt_Noir) {
 
         ObservableList<String> items = FXCollections.observableArrayList();
@@ -68,9 +84,15 @@ public class Function_A {
         return items;
     }
     
+    
+    /**
+     * Validates the data input
+     * @param input Contains Number of weeks, Capacity of Labor, Capacity of Grape, Price of Rosé, Price of P-Noir, Fixed Costs (in ascending order)
+     * @return Generate error message(s) caused by invalid inputs. The list will be empty if all the inputs are valid.
+     */
     public ObservableList<String> Data_Validation(String[] input){
         String[] Message = new String[]{
-                "Input error for Week Of Year: Please enter an integer in between 2301 and 2315",
+                "Input error for Number of weeks: Please enter an integer in between 1 and 15",
                 "Input error for Capacity Of Labor: Please enter an integer greater than 0",
                 "Input error for Capacity Of Grape: Please enter an integer greater than 0",
                 "Input error for Price Of Rose: Please enter a number greater than 0",
@@ -80,7 +102,7 @@ public class Function_A {
         
         Validation val = new Validation();
         ObservableList<String> items = FXCollections.observableArrayList();
-        if(!val.Check_Week_Of_Year(input[0])){
+        if(!val.Check_Num_Week(input[0])){
             items.add(Message[0]);
         }
         if(!val.Check_Cap_Labor(input[1])){
