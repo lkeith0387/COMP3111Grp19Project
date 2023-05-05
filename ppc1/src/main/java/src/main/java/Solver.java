@@ -3,14 +3,22 @@
  */
 package src.main.java;
 
+/**
+ *The Solver class provides solutions for calculation of some outputs in functions, including optimal volume of Rosé, optimal volume of P-Noir, and the revenue obtain with specified volume of Rosé and P-Noir.
+ */
 public class Solver {
     private int Cap_Labor = 0;
     private int Cap_Grape = 0;
     private float Prc_Rose = 0 ;
     private float Prc_Noir = 0 ;
 
-    private int Opt_Rose = 0;
-    private int Opt_Noir = 0;
+
+    /**Initializes a new Solver object that contains information on the capacity of Labor and Grape and the price of Rosé and P-Noir.
+     * @param Cap_Labor  The capacity of Labor
+     * @param Cap_Grape The capacity of Grape
+     * @param Prc_Rose The price of Rosé
+     * @param Prc_Noir The price of P-Noir
+     */
     //private int Production_Capacity_Limit = 0;
     //private double Man_Power_Limit = 0 ;
     public Solver(int Cap_Labor,int Cap_Grape,float Prc_Rose,float Prc_Noir){
@@ -22,37 +30,44 @@ public class Solver {
         //Production_Capacity_Limit = Num_week * 5000;
         //Man_Power_Limit = Num_week * 37.5;
     }
+
+    /**Calculates the optimal solution of volume of Rosé and P-Noir to obtain the highest revenue and store the result into an int array.
+     * @return  int[0]-The optimal volume of Rosé
+     *          int[1]-The optimal volume of P-Noir
+     *
+     */
     public int[] Opt_Solution() {
-        float maxRevenue = 0;
-        int opt_Rose = 0 ;
-        int opt_Noir = 0 ;
+        float Max_Revenue = 0;
+        int Opt_Rose = 0 ;
+        int Opt_Noir = 0 ;
         int i = 0 ;
         int j = 0 ;
 
-        while(true) {
-            if(5*i+12*j>Cap_Labor||6*i+4*j>Cap_Grape) {
+        while(5*i+12*j<=Cap_Labor&&6*i+4*j<=Cap_Grape) {
 
-                break;
-            }
-            while(true) {
-                if(5*i+12*j>Cap_Labor||6*i+4*j>Cap_Grape) {
-                    j= 0;
-                    break;
-                }
+            while(5*i+12*j<=Cap_Labor&&6*i+4*j<=Cap_Grape) {
+
                 float revenue = Calculation(i,j);
-                if(maxRevenue<revenue) {
-                    maxRevenue = revenue;
-                    opt_Rose = i;
-                    opt_Noir = j;
+                if(Max_Revenue<revenue) {
+                    Max_Revenue = revenue;
+                    Opt_Rose = i;
+                    Opt_Noir = j;
 
                 }
                 j++;
             }
+            j=0;
             i++;
         }
-        int[] result = {opt_Rose,opt_Noir};
+        int[] result = {Opt_Rose,Opt_Noir};
         return result;
     }
+
+    /**Calculates the revenue obtained with specified volume of Rosé and P-Noir.
+     * @param Num_Rose Volume of Rosé
+     * @param Num_Noir  Volume of P-Noir
+     * @return The revenue obtained with specified volume of Rosé and P-Noir
+     */
     public  float Calculation(int Num_Rose,int Num_Noir){
         return Prc_Rose*Num_Rose + Prc_Noir*Num_Noir;
     }

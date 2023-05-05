@@ -166,8 +166,8 @@ public class functionAController {
         Week_Of_Year = Integer.parseInt(Textfield_Week_Of_Year.getText());
         Cap_Labor = Integer.parseInt(Textfield_Cap_Labor.getText());
         Cap_Grape = Integer.parseInt(Textfield_Cap_Grape.getText());
-        Prc_Rose = Integer.parseInt(Textfield_Prc_Rose.getText());
-        Prc_Noir = Integer.parseInt(Textfield_Prc_Noir.getText());
+        Prc_Rose = Float.parseFloat(Textfield_Prc_Rose.getText());
+        Prc_Noir = Float.parseFloat(Textfield_Prc_Noir.getText());
         Fixed_Costs = Integer.parseInt(Textfield_Fixed_Costs.getText());
     }
     
@@ -179,7 +179,7 @@ public class functionAController {
      * @param Opt_Profit Optimized total gross profits before tax could be generated for the year
      * @param Opt_Margin Optimized profit margin
      */
-    private void Release_Result(int Opt_Noir,int Opt_Rose, int Opt_Profit, float Opt_Margin){
+    private void Release_Result(int Opt_Noir,int Opt_Rose, int Opt_Profit, double Opt_Margin){
         or_Prod_Vol_Noir.setText(String.valueOf(Opt_Noir));
         or_Prod_Vol_Rose.setText(String.valueOf(Opt_Rose));
         or_Prod_Vol_Total.setText(String.valueOf(Opt_Noir+Opt_Rose));
@@ -199,34 +199,24 @@ public class functionAController {
         double Labor_Rate = (935/37.5/60);
         
         Solver sol;
+        sol = new Solver(Cap_Labor, Cap_Grape, Prc_Rose, Prc_Noir);
+        int[] Result = sol.Opt_Solution();
+        Opt_Rose += Result[0];
+        Opt_Noir += Result[1];
         
-        //sol = new Solver ()
-        /**if(Bko_fulfill){
-            Opt_Rose = Bko_Rose ;
-            Opt_Noir = Bko_Noir ;
-            int Available_Cap_Labor =  Cap_Labor - Bko_Rose*5 - Bko_Noir*12;
-            int Available_Cap_Grape = Cap_Grape - Bko_Rose * 6 - Bko_Noir * 4;
-            sol = new Solver(Available_Cap_Labor,Available_Cap_Grape,Prc_Rose,Prc_Noir);
-            int[] Result = sol.Opt_Solution();
-            Opt_Rose += Result[0];
-            Opt_Noir += Result[1];
-        }else{
-            sol = new Solver(Cap_Labor,Cap_Grape,Prc_Rose,Prc_Noir);
-            int[] Result = sol.Opt_Solution();
-            Opt_Rose += Result[0];
-            Opt_Noir += Result[1];
-        }**/
-
-        //int Opt_Revenue = Double.valueOf(sol.Calculation(Opt_Rose,Opt_Noir)).intValue();
-        
-        int VCL = (int) (((Opt_Rose * 5) + (Opt_Noir * 12)) * Labor_Rate);						//VCL = Variable Cost of Labor
-        int Sales_Revenue = (int) ((Opt_Rose * Prc_Rose) + (Opt_Noir * Prc_Noir));				//Sales Revenue = Total Revenue
-        int Opt_Profit = Sales_Revenue - VCL - Fixed_Costs; 										//Opt_Profit = Gross Profit
-        float Opt_Margin = (Opt_Profit/Sales_Revenue * 100);
-        
-        Release_Result(Opt_Noir, Opt_Rose, Opt_Profit, Opt_Margin);
+        double VCL = ((Opt_Rose * 5 + Opt_Noir * 12) * Labor_Rate);						 		//VCL = Variable Cost of Labor
+        int Sales_Revenue = (int) (Math.round(Opt_Rose * Prc_Rose + Opt_Noir * Prc_Noir)); 		//Sales Revenue = Total Revenue
+        int Gross_Profit = (int) (Math.round(Sales_Revenue - VCL - Fixed_Costs)); 			 	//Gross Profit = Opt_Profit
+        double Opt_Margin_NotConv = (((double)Gross_Profit) * 100 / Sales_Revenue);
+        double Opt_Margin = roundAvoid(Opt_Margin_NotConv, 1);
+        Release_Result(Opt_Noir, Opt_Rose, Gross_Profit, Opt_Margin);
         Show_Message(Opt_Rose,Opt_Noir);
-
+    }
+    
+    
+    public static double roundAvoid(double value, int places) {
+        double scale = Math.pow(10, places);
+        return Math.round(value * scale) / scale;
     }
 
     /**
@@ -431,7 +421,8 @@ public class functionAController {
         }
     }
     
-    void toexit(ActionEvent event) throws  java.io.IOException{
+    @FXML
+    void To_Exit(ActionEvent event) throws  java.io.IOException{
         Scene scene=new Scene(FXMLLoader.load(getClass().getResource("ppc1.fxml")));
         Main.stage.setScene(scene);
     }
