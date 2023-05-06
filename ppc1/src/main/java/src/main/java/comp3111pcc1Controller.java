@@ -42,7 +42,17 @@ public class comp3111pcc1Controller {
 
     @FXML
     private void Afunction() throws IOException {
-        Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1_function_A.fxml")));
+      //  Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1_function_A.fxml")));
+        //Main.stage.setScene(scene);
+    }
+    @FXML
+    private void Bfunction() throws IOException {
+        //Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1_function_B.fxml")));
+        //Main.stage.setScene(scene);
+    }
+    @FXML
+    private void Cfunction() throws IOException {
+        Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1_function_C.fxml")));
         Main.stage.setScene(scene);
     }
     @FXML
