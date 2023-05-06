@@ -19,7 +19,7 @@ public class Validation_Tester {
     @Test
     public void Check_Num_Week_InValid1(){
         boolean expected = false;
-        boolean actual = val.Check_Num_Week("01");
+        boolean actual = val.Check_Num_Week("-1");
         assertEquals(expected,actual);
     }
     @Test
@@ -129,7 +129,7 @@ public class Validation_Tester {
     @Test
     public void Check_Cap_Labor_InValid(){
         boolean expected = false;
-        boolean actual = val.Check_Cap_Labor("0");
+        boolean actual = val.Check_Cap_Labor("-4");
         assertEquals(expected,actual);
     }
 
@@ -163,7 +163,7 @@ public class Validation_Tester {
     @Test
     public void Check_Cap_Grape_InValid(){
         boolean expected = false;
-        boolean actual = val.Check_Cap_Grape("0");
+        boolean actual = val.Check_Cap_Grape("-9");
         assertEquals(expected,actual);
     }
 

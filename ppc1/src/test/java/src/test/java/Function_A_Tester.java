@@ -13,7 +13,7 @@ public class Function_A_Tester {
     @Test
     public void Get_Result_Fun_A() {
         Function_A func = new Function_A();
-        String[] input = {"1","0","0","0.0","0.0","1"};
+        String[] input = {"1","0","0","0.0","0.0","0"};
         func.Get_Data(input);
         Result expected = new Result(0,0,0,0.0);
         Result actual = func.Get_Result();
