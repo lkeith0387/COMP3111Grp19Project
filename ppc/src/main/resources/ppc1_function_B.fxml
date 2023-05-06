@@ -63,8 +63,8 @@
             <Label layoutX="152.0" layoutY="198.0" text="Grape (Kgs)" />
             <Label layoutX="138.0" layoutY="254.0" text="Rose (A$/Litre)" />
             <Label layoutX="133.0" layoutY="279.0" text="P-Noir (A$/Litre)" />
-            <Button fx:id="button_run1" layoutX="342.0" layoutY="163.0" mnemonicParsing="false" onAction="#toclickB" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: yellow;" text="Run ==&gt;" textFill="#461ad9" />
-            <Button fx:id="button_exit1" layoutX="342.0" layoutY="242.0" mnemonicParsing="false" onAction="#toexitB" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: yellow;" text="Exit " textFill="#0009f5" />
+            <Button fx:id="button_run1" layoutX="682.0" layoutY="505.0" mnemonicParsing="false" onAction="#toclickB" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: yellow;" text="Run ==&gt;" textFill="#461ad9" />
+            <Button fx:id="button_exit1" layoutX="580.0" layoutY="505.0" mnemonicParsing="false" onAction="#toexitB" prefHeight="32.0" prefWidth="84.0" style="-fx-background-color: yellow;" text="Exit " textFill="#0009f5" />
             <Label layoutX="21.0" layoutY="337.0" prefHeight="17.0" prefWidth="269.0" text="System Messages / Warnings / Reminders" />
             <Label layoutX="387.0" layoutY="104.0" text="Production  Volume (Litre)" />
             <Line endX="603.9998779296875" layoutX="160.0" layoutY="94.0" startX="-137.79290771484375" />
