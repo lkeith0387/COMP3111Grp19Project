@@ -4,7 +4,7 @@ package src.main.java.Function_C;
 /**
  * The Validation class provides input validation for function C.
  */
-public class Validation {
+public class Validation_function_C {
 
     /**Checks the input validation for input Week_Of_Year
      * @param Week_Of_Year The week of year

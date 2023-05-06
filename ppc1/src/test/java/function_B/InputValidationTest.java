@@ -2,7 +2,7 @@ package function_B;
 
 import org.junit.Test;
 
-import src.main.java.InputValidation;
+import src.main.java.function_B.InputValidation;
 
 import static org.junit.Assert.*;
 

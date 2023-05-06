@@ -108,7 +108,7 @@ public class Function_C {
                 "Input error for Backorder Volume of Rose: Please enter a number greater than 0",
                 "Input error for Backorder Volume of P-Noir: Please enter a number greater than 0"
         };
-        Validation val = new Validation();
+        Validation_function_C val = new Validation_function_C();
         ObservableList<String> items = FXCollections.observableArrayList();
         if(!val.Check_Week_Of_Year(input[0])){
             items.add(Message[0]);

@@ -1,12 +1,12 @@
 package function_C;
 
 import org.junit.Test;
-import src.main.java.Function_C.Validation;
+import src.main.java.Function_C.Validation_function_C;
 
 import static org.junit.Assert.*;
 
-public class Validation_Tester {
-    private Validation val = new Validation();
+public class Validation_functionC_Tester {
+    private Validation_function_C val = new Validation_function_C();
 
 
     @Test
