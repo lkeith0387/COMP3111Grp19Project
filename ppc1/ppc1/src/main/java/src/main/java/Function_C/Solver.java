@@ -36,7 +36,7 @@ public class Solver {
      *          int[1]-The optimal volume of P-Noir
      *
      */
-    public int[] Opt_Solution() {
+    public int[] Opt_Solution(boolean celling,int celling_of_Rose,int celling_of_Noir) {
         float Max_Revenue = 0;
         int Opt_Rose = 0 ;
         int Opt_Noir = 0 ;
@@ -44,9 +44,17 @@ public class Solver {
         int j = 0 ;
 
         while(5*i+12*j<=Cap_Labor&&6*i+4*j<=Cap_Grape) {
-
+            if(celling){
+                if(i>celling_of_Rose){
+                    break;
+                }
+            }
             while(5*i+12*j<=Cap_Labor&&6*i+4*j<=Cap_Grape) {
-
+                if(celling){
+                    if(j>celling_of_Noir){
+                        break;
+                    }
+                }
                 float revenue = Calculation(i,j);
                 if(Max_Revenue<revenue) {
                     Max_Revenue = revenue;

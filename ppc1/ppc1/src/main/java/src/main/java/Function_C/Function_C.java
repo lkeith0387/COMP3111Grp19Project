@@ -32,12 +32,12 @@ public class Function_C {
             int Available_Cap_Labor =  Cap_Labor - Bko_Rose*5 - Bko_Noir*12;
             int Available_Cap_Grape = Cap_Grape - Bko_Rose * 6 - Bko_Noir * 4;
             sol = new Solver(Available_Cap_Labor,Available_Cap_Grape,Prc_Rose,Prc_Noir);
-            int[] Result = sol.Opt_Solution();
+            int[] Result = sol.Opt_Solution(false,Bko_Rose,Bko_Noir);
             Opt_Rose += Result[0];
             Opt_Noir += Result[1];
         }else{
             sol = new Solver(Cap_Labor,Cap_Grape,Prc_Rose,Prc_Noir);
-            int[] Result = sol.Opt_Solution();
+            int[] Result = sol.Opt_Solution(true,Bko_Rose,Bko_Noir);
             Opt_Rose += Result[0];
             Opt_Noir += Result[1];
         }
