@@ -1,4 +1,4 @@
-package src.main.java;
+package src.main.java.function_B;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -6,12 +6,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import src.main.java.Main;
+
+import java.io.IOException;
 
 
 /**
@@ -371,7 +376,6 @@ public class functionBController {
      * to get error messages of condition when consumption greater than capacity
      * @param sur_labor surplus number of labor
      * @param sur_grape surplus number of grape
-     * @param items an array store error message
      * @return items
      */
     public ObservableList<String> surplus_message(int sur_labor, int sur_grape){
@@ -467,8 +471,9 @@ public class functionBController {
      * Handle mouse click event on "Exit" button
      * @param event
      */
-    public void toexitB(ActionEvent event) {
-    	Main.stage.setScene(Main.scene);
+    public void toexitB(ActionEvent event) throws IOException {
+        Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1.fxml")));
+        Main.stage.setScene(scene);
     }
 
 }

@@ -53,18 +53,18 @@
             <Label layoutX="555.0" layoutY="104.0" text="Rose: " />
             <Label layoutX="552.0" layoutY="134.0" text="P-Noir:" />
             <Label layoutX="556.0" layoutY="168.0" text="Total:" />
-            <TextField fx:id="or_Prod_Vol_Rose" layoutX="609.0" layoutY="100.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
+            <TextField fx:id="or_Prod_Vol_Rose" editable="false" layoutX="609.0" layoutY="100.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
             <Label layoutX="462.0" layoutY="195.0" text="Revenue (A$):" />
-            <TextField fx:id="or_sur_Labor" layoutX="609.0" layoutY="218.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
-            <TextField fx:id="or_Prod_Vol_Noir" layoutX="609.0" layoutY="130.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
-            <TextField fx:id="or_Prod_Vol_Total" layoutX="609.0" layoutY="164.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
+            <TextField fx:id="or_sur_Labor" editable="false" layoutX="609.0" layoutY="218.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
+            <TextField fx:id="or_Prod_Vol_Noir" editable="false" layoutX="609.0" layoutY="130.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
+            <TextField fx:id="or_Prod_Vol_Total" editable="false" layoutX="609.0" layoutY="164.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
             <Line endX="569.0" layoutX="146.0" layoutY="159.0" startX="380.0" />
-            <TextField fx:id="or_sur_Grape" layoutX="609.0" layoutY="246.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
-            <TextField fx:id="or_Revenue" layoutX="609.0" layoutY="194.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
+            <TextField fx:id="or_sur_Grape" editable="false" layoutX="609.0" layoutY="246.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
+            <TextField fx:id="or_Revenue" editable="false" layoutX="609.0" layoutY="194.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
             <Label layoutX="515.0" layoutY="222.0" text="Labor (Minutes)" />
             <Label layoutX="527.0" layoutY="246.0" text="Grape (Kgs)" />
             <Label layoutX="461.0" layoutY="221.0" text="Surplus:" />
-            <TextField fx:id="or_sur_Total" layoutX="609.0" layoutY="284.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
+            <TextField fx:id="or_sur_Total" editable="false" layoutX="609.0" layoutY="284.0" prefHeight="25.0" prefWidth="93.0" promptText="999,999" />
             <Label layoutX="556.0" layoutY="288.0" text="Total:" />
             <Line endX="66.0" layoutX="649.0" layoutY="279.0" startX="-123.0" />
             <ListView fx:id="listviewB" layoutX="21.0" layoutY="360.0" prefHeight="137.0" prefWidth="744.0" />
