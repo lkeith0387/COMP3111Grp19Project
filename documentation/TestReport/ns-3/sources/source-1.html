@@ -1,0 +1,244 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Function_C</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">src.main.java.Function_C</a>
+</div>
+
+<h1>Coverage Summary for Class: Function_C (src.main.java.Function_C)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Function_C</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (55/55)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package src.main.java.Function_C;
+&nbsp;
+&nbsp;import javafx.collections.FXCollections;
+&nbsp;import javafx.collections.ObservableList;
+&nbsp;
+&nbsp;/**
+&nbsp; * The Function_C class contains the process performed in the function C.
+&nbsp; */
+<b class="fc">&nbsp;public class Function_C {</b>
+&nbsp;    private int Week_Of_Year;
+&nbsp;    private int Bko_Rose;
+&nbsp;    private int Cap_Labor;
+&nbsp;    private int Cap_Grape;
+&nbsp;    private int Bko_Noir;
+&nbsp;    private float Prc_Rose;
+&nbsp;    private float Prc_Noir;
+&nbsp;
+&nbsp;    /**Calculates the optimal solution of the volume of Ros? and P-Noir with or without any backorder of Ros? and P-Noir to maximize the revenue
+&nbsp;     * @return A Result object that stores the result of the optimal solution including the state of backorder fulfillment, optimal volume of Ros?, optimal volume of P-Noir, optimized sales revenue
+&nbsp;     */
+&nbsp;    public Result Get_Result(){
+<b class="fc">&nbsp;        boolean Bko_Fulfill = false;</b>
+<b class="fc">&nbsp;        int Opt_Rose = 0 ;</b>
+<b class="fc">&nbsp;        int Opt_Noir = 0 ;</b>
+<b class="fc">&nbsp;        if((Bko_Rose*5+Bko_Noir*12&lt;=Cap_Labor)&amp;&amp;(Bko_Rose*6+Bko_Noir*4&lt;=Cap_Grape)){</b>
+<b class="fc">&nbsp;            Bko_Fulfill = true;</b>
+&nbsp;        }
+&nbsp;        Solver sol;
+<b class="fc">&nbsp;        if(Bko_Fulfill){</b>
+<b class="fc">&nbsp;            Opt_Rose = Bko_Rose ;</b>
+<b class="fc">&nbsp;            Opt_Noir = Bko_Noir ;</b>
+<b class="fc">&nbsp;            int Available_Cap_Labor =  Cap_Labor - Bko_Rose*5 - Bko_Noir*12;</b>
+<b class="fc">&nbsp;            int Available_Cap_Grape = Cap_Grape - Bko_Rose * 6 - Bko_Noir * 4;</b>
+<b class="fc">&nbsp;            sol = new Solver(Available_Cap_Labor,Available_Cap_Grape,Prc_Rose,Prc_Noir);</b>
+<b class="fc">&nbsp;            int[] Result = sol.Opt_Solution(false,Bko_Rose,Bko_Noir);</b>
+<b class="fc">&nbsp;            Opt_Rose += Result[0];</b>
+<b class="fc">&nbsp;            Opt_Noir += Result[1];</b>
+<b class="fc">&nbsp;        }else{</b>
+<b class="fc">&nbsp;            sol = new Solver(Cap_Labor,Cap_Grape,Prc_Rose,Prc_Noir);</b>
+<b class="fc">&nbsp;            int[] Result = sol.Opt_Solution(true,Bko_Rose,Bko_Noir);</b>
+<b class="fc">&nbsp;            Opt_Rose += Result[0];</b>
+<b class="fc">&nbsp;            Opt_Noir += Result[1];</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        int Opt_Revenue = Double.valueOf(sol.Calculation(Opt_Rose,Opt_Noir)).intValue();</b>
+<b class="fc">&nbsp;        return new Result(Bko_Fulfill,Opt_Rose,Opt_Noir,Opt_Revenue);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**Converts an array of the texted input into numeric data and stores in the fields of the class.
+&nbsp;     * @param input input[0] is the week of year.
+&nbsp;     *              input[1] is the capacity of the labor.
+&nbsp;     *              input[2] is the capacity of the grape.
+&nbsp;     *              input[3] is the price of Ros?.
+&nbsp;     *              input[4] is the price of P-Noir.
+&nbsp;     *              input[5] is the backorder volume of Ros?
+&nbsp;     *              input[6] is the backorder volume of P-Noir.
+&nbsp;     */
+&nbsp;    public void Get_Data(String[] input){
+<b class="fc">&nbsp;        Week_Of_Year = Integer.parseInt(input[0]);</b>
+<b class="fc">&nbsp;        Cap_Labor = Integer.parseInt(input[1]);</b>
+<b class="fc">&nbsp;        Cap_Grape = Integer.parseInt(input[2]);</b>
+<b class="fc">&nbsp;        Prc_Rose = Float.parseFloat(input[3]);</b>
+<b class="fc">&nbsp;        Prc_Noir = Float.parseFloat(input[4]);</b>
+<b class="fc">&nbsp;        Bko_Rose = Integer.parseInt(input[5]);</b>
+<b class="fc">&nbsp;        Bko_Noir = Integer.parseInt(input[6]);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**Checks whether the optimal solution of the volume of Ros? and P-Noir will lead to abnormal situation and produces warning messages for abnormal situations.
+&nbsp;     * @param Opt_Rose Number of litres to be produced for Ros?
+&nbsp;     * @param Opt_Noir Number of litres to be produced for P-Noir
+&nbsp;     * @return A list of warning messages caused by the optimal solution. The list will be empty if there is no abnormal situation happened.
+&nbsp;     */
+&nbsp;    public ObservableList&lt;String&gt; Get_Warning_Message(int Opt_Rose, int Opt_Noir) {
+&nbsp;
+<b class="fc">&nbsp;        ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
+<b class="fc">&nbsp;        if(5000&lt;Opt_Rose+Opt_Noir){</b>
+&nbsp;
+<b class="fc">&nbsp;            items.add(&quot;w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor &amp; grape volume!&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if((Opt_Rose*6+Opt_Noir*4)&lt;Cap_Grape*0.9){</b>
+&nbsp;
+<b class="fc">&nbsp;            items.add(&quot;w2: Insufficient labor supplied to utilize the grape resource (less than 90%).&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if((Bko_Rose+Bko_Noir)&lt;0.7*(Opt_Rose+Opt_Noir)){</b>
+&nbsp;
+<b class="fc">&nbsp;            items.add(&quot;w3: According to company policy, ratio of backorder volume should not lower than 70% of the optimal production volume!&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return items;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /** Validates the data input
+&nbsp;     * @param input input[0] is the week of year.
+&nbsp;     *              input[1] is the capacity of the labor.
+&nbsp;     *              input[2] is the capacity of the grape.
+&nbsp;     *              input[3] is the price of Ros?.
+&nbsp;     *              input[4] is the price of P-Noir.
+&nbsp;     *              input[5] is the backorder volume of Ros?
+&nbsp;     *              input[6] is the backorder volume of P-Noir.
+&nbsp;     * @return A list of error messages caused by invalid inputs. The list will be empty if all the inputs are valid.
+&nbsp;     */
+&nbsp;    public ObservableList&lt;String&gt; Data_Validation(String[] input){
+<b class="fc">&nbsp;        String[] Message = new String[]{</b>
+&nbsp;                &quot;Input error for Week Of Year: Please enter an integer in between 2301 and 2315.&quot;,
+&nbsp;                &quot;Input error for Capacity Of Labor: Please enter an integer greater than 0.&quot;,
+&nbsp;                &quot;Input error for Capacity Of Grape: Please enter an integer greater than 0.&quot;,
+&nbsp;                &quot;Input error for Price Of Rose: Please enter a number greater than 0.&quot;,
+&nbsp;                &quot;Input error for Price Of P-Noir: Please enter a number greater than 0.&quot;,
+&nbsp;                &quot;Input error for Backorder Volume of Rose: Please enter a non-negative number.&quot;,
+&nbsp;                &quot;Input error for Backorder Volume of P-Noir: Please enter a non-negative number.&quot;
+&nbsp;        };
+<b class="fc">&nbsp;        Validation_function_C val = new Validation_function_C();</b>
+<b class="fc">&nbsp;        ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
+<b class="fc">&nbsp;        if(!val.Check_Week_Of_Year(input[0])){</b>
+<b class="fc">&nbsp;            items.add(Message[0]);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(!val.Check_Cap_Labor(input[1])){</b>
+<b class="fc">&nbsp;            items.add(Message[1]);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(!val.Check_Cap_Grape(input[2])){</b>
+<b class="fc">&nbsp;            items.add(Message[2]);</b>
+&nbsp;
+&nbsp;        }
+<b class="fc">&nbsp;        if (!val.Check_Prc_Rose(input[3])){</b>
+&nbsp;
+<b class="fc">&nbsp;            items.add(Message[3]);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(!val.Check_Prc_Noir(input[4])){</b>
+&nbsp;
+<b class="fc">&nbsp;            items.add(Message[4]);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(!val.Check_Bko_Rose(input[5])){</b>
+&nbsp;
+<b class="fc">&nbsp;            items.add(Message[5]);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(!val.Check_Bko_Noir(input[6])){</b>
+&nbsp;
+<b class="fc">&nbsp;            items.add(Message[6]);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return items;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-05-07 18:58</div>
+</div>
+</body>
+</html>

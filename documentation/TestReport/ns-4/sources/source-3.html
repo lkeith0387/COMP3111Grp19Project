@@ -1,0 +1,582 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > functionBController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">src.main.java.function_B</a>
+</div>
+
+<h1>Coverage Summary for Class: functionBController (src.main.java.function_B)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">functionBController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    55.6%
+  </span>
+  <span class="absValue">
+    (5/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    51.3%
+  </span>
+  <span class="absValue">
+    (39/76)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package src.main.java.function_B;
+&nbsp;
+&nbsp;import javafx.beans.value.ChangeListener;
+&nbsp;import javafx.beans.value.ObservableValue;
+&nbsp;import javafx.collections.FXCollections;
+&nbsp;import javafx.collections.ObservableList;
+&nbsp;import javafx.event.ActionEvent;
+&nbsp;import javafx.fxml.FXML;
+&nbsp;import javafx.fxml.FXMLLoader;
+&nbsp;import javafx.scene.Scene;
+&nbsp;import javafx.scene.control.Button;
+&nbsp;import javafx.scene.control.Label;
+&nbsp;import javafx.scene.control.ListView;
+&nbsp;import javafx.scene.control.TextField;
+&nbsp;import javafx.scene.layout.AnchorPane;
+&nbsp;import javafx.scene.shape.Line;
+&nbsp;import src.main.java.Main;
+&nbsp;
+&nbsp;import java.io.IOException;
+&nbsp;
+&nbsp;
+&nbsp;/**
+&nbsp; * A Controller for function B in ppc1 calculator project.
+&nbsp; * @author Cheung Kwok Wai, Steven
+&nbsp; * @version 1.0
+&nbsp; */
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;public class functionBController {</b>
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Cap_Grape;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Cap_Labor;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine_1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine_2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine_3;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine_4;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine_5;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Num_Week;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Prc_Noir;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Prc_Rose;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line VLine1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line VLine2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line VLine3;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Button button_exit1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Button button_run1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption2a;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption2b;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption3;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption3a;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption3b;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_heading1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label form_heading1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private AnchorPane label_col_headingB;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label label_sysmsg1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1a;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1b;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1c;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption3;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption3a;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption3b;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption3c;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_result_heading1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Prod_Vol_Noir;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Prod_Vol_Rose;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Prod_Vol_Total;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Revenue;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_sur_Grape;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_sur_Labor;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_sur_Total;
+&nbsp;    
+&nbsp;    @FXML
+&nbsp;    private ListView&lt;String&gt; listviewB;
+&nbsp;    
+&nbsp;    
+&nbsp;    /* public void initialize() {
+&nbsp;    	ObservableList&lt;String&gt; items1 = FXCollections.observableArrayList();
+&nbsp;    	
+&nbsp;    	Num_Week.textProperty().addListener(new ChangeListener&lt;String&gt;() {
+&nbsp;    		@Override
+&nbsp;            public void changed(ObservableValue&lt;? extends String&gt; observable, String oldValue, String newValue) {
+&nbsp;                try {
+&nbsp;                    if (0 &gt; Integer.parseInt(newValue) || 2316 &lt; Integer.parseInt(newValue)) {
+&nbsp;                    	if(Integer.parseInt(newValue) &lt;=  2300) {
+&nbsp;                    		items1.add(&quot;Num_Week: Please enter an integer between 2301 and 2315&quot;);
+&nbsp;                    		Num_Week.setText(&quot;&quot;);
+&nbsp;                    	}
+&nbsp;                    	items1.add(&quot;Num_Week: Please enter an integer between 2301 and 2315&quot;); //replicated
+&nbsp;                		Num_Week.setText(&quot;&quot;);
+&nbsp;                    } else {
+&nbsp;
+&nbsp;                    }
+&nbsp;                } catch (NumberFormatException e) {
+&nbsp;                	items1.add(&quot;Num_Week: Please enter an integer between 2301 and 2315&quot;);
+&nbsp;                    Num_Week.setText(&quot;&quot;);
+&nbsp;                }
+&nbsp;            }
+&nbsp;    	});
+&nbsp;    	
+&nbsp;    	
+&nbsp;    	Cap_Grape.textProperty().addListener(new ChangeListener&lt;String&gt;() {
+&nbsp;    		@Override
+&nbsp;            public void changed(ObservableValue&lt;? extends String&gt; observable, String oldValue, String newValue) {
+&nbsp;                try {
+&nbsp;                    if (0 &gt; Integer.parseInt(newValue)) {
+&nbsp;                        items1.add(&quot;Cap_Grape: Please enter an integer greater than 0&quot;);
+&nbsp;                        Num_Week.setText(&quot;&quot;);
+&nbsp;                    } else {
+&nbsp;
+&nbsp;                    }
+&nbsp;                } catch (NumberFormatException e) {
+&nbsp;                	items1.add(&quot;Cap_Grape: Please enter an integer greater than 0&quot;);
+&nbsp;                    Num_Week.setText(&quot;&quot;);
+&nbsp;                }
+&nbsp;            }
+&nbsp;    	});
+&nbsp;    	
+&nbsp;    	Cap_Labor.textProperty().addListener(new ChangeListener&lt;String&gt;() {
+&nbsp;    		@Override
+&nbsp;            public void changed(ObservableValue&lt;? extends String&gt; observable, String oldValue, String newValue) {
+&nbsp;                try {
+&nbsp;                    if (0 &gt; Integer.parseInt(newValue)) {
+&nbsp;                        items1.add(&quot;Cap_Labor: Please enter an integer greater than 0&quot;);
+&nbsp;                        Num_Week.setText(&quot;&quot;);
+&nbsp;                    } else {
+&nbsp;
+&nbsp;                    }
+&nbsp;                } catch (NumberFormatException e) {
+&nbsp;                	items1.add(&quot;Cap_Labor: Please enter an integer greater than 0&quot;);
+&nbsp;                    Num_Week.setText(&quot;&quot;);
+&nbsp;                }
+&nbsp;            }
+&nbsp;    	});
+&nbsp;    	
+&nbsp;    	Prc_Rose.textProperty().addListener(new ChangeListener&lt;String&gt;() {
+&nbsp;    		@Override
+&nbsp;            public void changed(ObservableValue&lt;? extends String&gt; observable, String oldValue, String newValue) {
+&nbsp;                try {
+&nbsp;                    if (0 &gt; Float.parseFloat(newValue)) {
+&nbsp;                        items1.add(&quot;Prc_Rose: Please enter a number greater than 0&quot;);
+&nbsp;                        Num_Week.setText(&quot;&quot;);
+&nbsp;                    } else {
+&nbsp;
+&nbsp;                    }
+&nbsp;                } catch (NumberFormatException e) {
+&nbsp;                	items1.add(&quot;Prc_Rose: Please enter a number greater than 0&quot;);
+&nbsp;                    Num_Week.setText(&quot;&quot;);
+&nbsp;                }
+&nbsp;            }
+&nbsp;    	});
+&nbsp;    	
+&nbsp;    	Prc_Noir.textProperty().addListener(new ChangeListener&lt;String&gt;() {
+&nbsp;    		@Override
+&nbsp;            public void changed(ObservableValue&lt;? extends String&gt; observable, String oldValue, String newValue) {
+&nbsp;                try {
+&nbsp;                    if (0 &gt; Float.parseFloat(newValue)) {
+&nbsp;                        items1.add(&quot;Prc_Noir: Please enter a number greater than 0&quot;);
+&nbsp;                        Num_Week.setText(&quot;&quot;);
+&nbsp;                    } else {
+&nbsp;
+&nbsp;                    }
+&nbsp;                } catch (NumberFormatException e) {
+&nbsp;                	items1.add(&quot;Prc_Noir: Please enter a number greater than 0&quot;);
+&nbsp;                    Num_Week.setText(&quot;&quot;);
+&nbsp;                }
+&nbsp;            }
+&nbsp;    	});
+&nbsp;    	
+&nbsp;    	
+&nbsp;    	listviewB.setItems(items1);
+&nbsp;        
+&nbsp;    } */
+<b class="fc">&nbsp;    int cap_labor =0, cap_grape=0, num_week =0;//maxRevenue=0;</b>
+<b class="fc">&nbsp;    float prc_rose=0, prc_noir=0;</b>
+&nbsp;    
+&nbsp;    
+&nbsp;  
+&nbsp;    /**
+&nbsp;     * Get user input.
+&nbsp;     */
+&nbsp;    public void Input_Data(String[] input) {
+<b class="fc">&nbsp;    	num_week = Integer.parseInt(input[0]);</b>
+<b class="fc">&nbsp;    	cap_labor = Integer.parseInt(input[1]);</b>
+<b class="fc">&nbsp;    	cap_grape = Integer.parseInt(input[2]);</b>
+<b class="fc">&nbsp;    	prc_rose = Float.parseFloat(input[3]);</b>
+<b class="fc">&nbsp;    	prc_noir = Float.parseFloat(input[4]);</b>
+&nbsp;    }
+&nbsp;    
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Output text in textfields.
+&nbsp;     * @param opt_Rose Optimal mix of Rose
+&nbsp;     * @param opt_Noir Optimal mix of P-Noir
+&nbsp;     * @param opt_total Optimal total mix of wines                
+&nbsp;     * @param maxRevenue The maxRevenue calculated
+&nbsp;     * @param sur_labor Surplus of labor force
+&nbsp;     * @param sur_grape Surplus of Grape
+&nbsp;     * @param sur_total Total surplus of labor force and grape
+&nbsp;     */
+&nbsp;    public void Output_Data(int opt_Rose, int opt_Noir, int opt_total,int maxRevenue,int sur_labor,int sur_grape,int sur_total){
+<b class="nc">&nbsp;    	or_Prod_Vol_Rose.setText(Integer.toString(opt_Rose));</b>
+<b class="nc">&nbsp;    	or_Prod_Vol_Noir.setText(Integer.toString(opt_Noir));</b>
+<b class="nc">&nbsp;    	or_Prod_Vol_Total.setText(Integer.toString(opt_total));</b>
+<b class="nc">&nbsp;    	or_Revenue.setText(Integer.toString(maxRevenue));</b>
+<b class="nc">&nbsp;    	or_sur_Labor.setText(Integer.toString(sur_labor));</b>
+<b class="nc">&nbsp;    	or_sur_Grape.setText(Integer.toString(sur_grape));</b>
+<b class="nc">&nbsp;    	or_sur_Total.setText(Integer.toString(sur_total));</b>
+&nbsp;    }
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * Handles mouse click event on &quot;run&quot; button
+&nbsp;     * @param event 
+&nbsp;     */
+&nbsp;    
+&nbsp;    
+&nbsp;    
+&nbsp;    @FXML 
+&nbsp;    public void toclickB(ActionEvent event) {   ///function structure complete.
+&nbsp;    	
+<b class="nc">&nbsp;    	String[] input = new String[5];</b>
+<b class="nc">&nbsp;    	input[0] = Num_Week.getText();</b>
+<b class="nc">&nbsp;        input[1] = Cap_Labor.getText();</b>
+<b class="nc">&nbsp;        input[2] = Cap_Grape.getText();</b>
+<b class="nc">&nbsp;        input[3] = Prc_Rose.getText();</b>
+<b class="nc">&nbsp;        input[4] = Prc_Noir.getText();</b>
+&nbsp;   
+&nbsp; 
+<b class="nc">&nbsp;    	int opt_Rose=0,opt_Noir=0, sur_labor =0, sur_grape = 0, opt_total = 0, sur_total = 0, maxRevenue =0;</b>
+&nbsp; 
+<b class="nc">&nbsp;    	Calculator a = new Calculator();</b>
+<b class="nc">&nbsp;    	ObservableList&lt;String&gt; Message = datainvalid(input);</b>
+&nbsp;    	
+<b class="nc">&nbsp;    	if(Message.size()&gt;0) {</b>
+<b class="nc">&nbsp;    		Display_Message(Message);</b>
+&nbsp;    		return;
+&nbsp;    	}
+<b class="nc">&nbsp;    	Input_Data(input);</b>
+<b class="nc">&nbsp;    	int[] b = a.Optimization(cap_labor,cap_grape,prc_rose,prc_noir);</b>
+<b class="nc">&nbsp;    	opt_Rose = b[0];</b>
+<b class="nc">&nbsp;    	opt_Noir = b[1];</b>
+<b class="nc">&nbsp;    	maxRevenue = b[2];</b>
+<b class="nc">&nbsp;    	opt_total = opt_Rose + opt_Noir;</b>
+&nbsp;    	/*or_Prod_Vol_Rose.setText(Integer.toString(opt_Rose));
+&nbsp;    	or_Prod_Vol_Noir.setText(Integer.toString(opt_Noir));
+&nbsp;    	or_Prod_Vol_Total.setText(Integer.toString(opt_total));
+&nbsp;    	or_Revenue.setText(Integer.toString(maxRevenue)); */
+<b class="nc">&nbsp;    	sur_labor = cap_labor - (opt_Rose*5 + opt_Noir*12);</b>
+<b class="nc">&nbsp;    	sur_grape = cap_grape - (opt_Rose*6 + opt_Noir*4);</b>
+&nbsp;     	
+<b class="nc">&nbsp;    	ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
+<b class="nc">&nbsp;    	ObservableList&lt;String&gt; items1 = FXCollections.observableArrayList();</b>
+&nbsp;    
+&nbsp;    	/*if((sur_labor &gt; 0) &amp; (sur_labor &lt; 5)) {
+&nbsp;    		sur_labor = 0;
+&nbsp;    	}else if (sur_labor &lt; 0) {
+&nbsp;    		sur_labor = 0;
+&nbsp;    		items.add(&quot;Er1a:Program bug is occurred, Labor Consumption cannot greater than its capacity!&quot;);
+&nbsp;    	}else {
+&nbsp;    		
+&nbsp;    	}
+&nbsp;
+&nbsp;
+&nbsp;    	if((sur_grape &gt; 0) &amp; (sur_grape &lt; 4)) {
+&nbsp;    		sur_grape = 0;
+&nbsp;    	}else if (sur_grape &lt; 0) {
+&nbsp;    		sur_grape = 0;
+&nbsp;    		items.add(&quot;Er1b:Program bug is occurred, Grape Consumption cannot greater than its capacity!&quot;);
+&nbsp;    	}else {
+&nbsp;    		
+&nbsp;    	} 
+&nbsp;    	listviewB.setItems(items);*/
+&nbsp;    	
+&nbsp;    	
+&nbsp;    	
+<b class="nc">&nbsp;    	items = surplus_message(sur_labor,sur_grape);</b>
+&nbsp;    	
+&nbsp;    	
+<b class="nc">&nbsp;    	Display_Message(items);</b>
+&nbsp;    	
+<b class="nc">&nbsp;    	sur_total = sur_grape + sur_labor;</b>
+<b class="nc">&nbsp;    	Output_Data(opt_Rose, opt_Noir, opt_total,maxRevenue,sur_labor,sur_grape,sur_total);</b>
+<b class="nc">&nbsp;    	items1 = message(opt_Rose,opt_Noir);</b>
+<b class="nc">&nbsp;    	Display_Message(items1);</b>
+&nbsp;    }	
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * to get error messages of condition when consumption greater than capacity
+&nbsp;     * @param sur_labor surplus number of labor
+&nbsp;     * @param sur_grape surplus number of grape
+&nbsp;     * @return items
+&nbsp;     */
+&nbsp;    public ObservableList&lt;String&gt; surplus_message(int sur_labor, int sur_grape){
+<b class="fc">&nbsp;    	ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
+<b class="fc">&nbsp;    	if((sur_labor &gt; 0) &amp; (sur_labor &lt; 5)) {</b>
+<b class="fc">&nbsp;    		sur_labor = 0;</b>
+<b class="fc">&nbsp;    	}else if (sur_labor &lt; 0) {</b>
+<b class="fc">&nbsp;    		sur_labor = 0;</b>
+<b class="fc">&nbsp;    		items.add(&quot;Er1a:Program bug is occurred, Labor Consumption cannot greater than its capacity!&quot;);</b>
+&nbsp;    	}else {
+&nbsp;    		
+&nbsp;    	}
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    	if((sur_grape &gt; 0) &amp; (sur_grape &lt; 4)) {</b>
+<b class="fc">&nbsp;    		sur_grape = 0;</b>
+<b class="fc">&nbsp;    	}else if (sur_grape &lt; 0) {</b>
+<b class="fc">&nbsp;    		sur_grape = 0;</b>
+<b class="fc">&nbsp;    		items.add(&quot;Er1b:Program bug is occurred, Grape Consumption cannot greater than its capacity!&quot;);</b>
+&nbsp;    	}else {
+&nbsp;    		
+&nbsp;    	}
+<b class="fc">&nbsp;		return items; </b>
+&nbsp;    }
+&nbsp;   
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * to get warning messages
+&nbsp;     * @param opt_Rose the optimal mix of rose
+&nbsp;     * @param opt_Noir the optimal mix of P-Noir
+&nbsp;     */
+&nbsp;    public ObservableList&lt;String&gt; message(int opt_Rose,int opt_Noir) {
+<b class="fc">&nbsp;    	ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
+<b class="fc">&nbsp;    	if(5000 &lt; opt_Rose + opt_Noir) {</b>
+<b class="fc">&nbsp;    		items.add(&quot;w1: Insufficient production capacity to produce the optimal mix, please reduce or adjust the capacity of labor &amp; grape volume!&quot;);</b>
+&nbsp;    	}
+<b class="fc">&nbsp;    	if((opt_Rose*6 + opt_Noir*4) &lt;cap_grape*0.9) {</b>
+<b class="fc">&nbsp;    		items.add(&quot;W2: Insufficient labor supplied to utilize the grape resource (less than 90%).&quot;);</b>
+&nbsp;    	}
+<b class="fc">&nbsp;    	return items;</b>
+&nbsp;    }
+&nbsp;   
+&nbsp;    /**
+&nbsp;     * display warning messages
+&nbsp;     * @param Message the output message
+&nbsp;     */
+&nbsp;    public void Display_Message(ObservableList&lt;String&gt; Message) {
+<b class="nc">&nbsp;        listviewB.setItems(Message);</b>
+&nbsp;    }
+&nbsp;    
+&nbsp;
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * A function to call an extra class to verify if the input are in valid formats.
+&nbsp;     * @return a boolean whether the test passed.
+&nbsp;     */
+&nbsp;    public ObservableList&lt;String&gt; datainvalid(String[] input) {
+&nbsp;    	//boolean result = true;
+<b class="fc">&nbsp;    	ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
+<b class="fc">&nbsp;    	InputValidation valid = new InputValidation();</b>
+&nbsp;    	
+<b class="fc">&nbsp;    	if(!valid.Check_Num_Week(input[0])) {</b>
+&nbsp;    		//Num_Week.setText(&quot;&quot;);
+&nbsp;    		//result = false;
+<b class="fc">&nbsp;    		items.add(&quot;Num_Week: Please enter an integer between 2301 and 2315&quot;);</b>
+&nbsp;    	}
+<b class="fc">&nbsp;    	if(!valid.Check_Cap_Labor(input[1])) {</b>
+&nbsp;    		//Cap_Labor.setText(&quot;&quot;);
+&nbsp;    		//result = false;
+<b class="fc">&nbsp;    		items.add(&quot;Cap_Labor: Please enter an integer greater than 0&quot;);</b>
+&nbsp;    	}
+<b class="fc">&nbsp;    	if(!valid.Check_Cap_Grape(input[2])) {</b>
+&nbsp;    		//Cap_Grape.setText(&quot;&quot;);
+&nbsp;    		//result = false;
+<b class="fc">&nbsp;    		items.add(&quot;Cap_Grape: Please enter an integer greater than 0&quot;);</b>
+&nbsp;    	}
+<b class="fc">&nbsp;    	if(!valid.Check_Prc_Rose(input[3])) {</b>
+&nbsp;    		//Prc_Rose.setText(&quot;&quot;);
+&nbsp;    		//result = false;
+<b class="fc">&nbsp;    		items.add(&quot;Prc_Rose: Please enter a number greater than 0&quot;);</b>
+&nbsp;    	}
+<b class="fc">&nbsp;    	if(!valid.Check_Prc_Noir(input[4])) {</b>
+&nbsp;    		//Prc_Noir.setText(&quot;&quot;);
+&nbsp;    		//result = false;
+<b class="fc">&nbsp;    		items.add(&quot;Prc_Noir: Please enter a number greater than 0&quot;);</b>
+&nbsp;    	}
+&nbsp;    	
+<b class="fc">&nbsp;    	return items;</b>
+&nbsp;    }
+&nbsp;       
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * Handle mouse click event on &quot;Exit&quot; button
+&nbsp;     * @param event
+&nbsp;     */
+&nbsp;    public void toexitB(ActionEvent event) throws IOException {
+<b class="nc">&nbsp;        Scene scene=new Scene(FXMLLoader.load(getClass().getResource(&quot;/ppc1.fxml&quot;)));</b>
+<b class="nc">&nbsp;        Main.stage.setScene(scene);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-05-07 18:58</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,314 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > functionAController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">src.main.java.Function_A</a>
+</div>
+
+<h1>Coverage Summary for Class: functionAController (src.main.java.Function_A)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">functionAController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/26)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package src.main.java.Function_A;
+&nbsp;
+&nbsp;import javafx.collections.ObservableList;
+&nbsp;import javafx.event.ActionEvent;
+&nbsp;import javafx.fxml.FXML;
+&nbsp;import javafx.fxml.FXMLLoader;
+&nbsp;import javafx.scene.Scene;
+&nbsp;import javafx.scene.control.*;
+&nbsp;import javafx.scene.layout.AnchorPane;
+&nbsp;import javafx.scene.shape.Line;
+&nbsp;import src.main.java.Main;
+&nbsp;
+&nbsp;/**
+&nbsp; * functionAContoller class is the controller to the control the GUL of function A
+&nbsp; */
+<b class="nc">&nbsp;public class functionAController {</b>
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Textfield_Cap_Grape;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Textfield_Cap_Labor;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Textfield_Fixed_Costs;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine3;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine4;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line HLine_1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Textfield_Num_Week;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Textfield_Prc_Noir;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField Textfield_Prc_Rose;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line VLine1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line VLine2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Button button_exit1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Button button_run1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption2a;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption2b;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption3;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption3a;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption3b;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_caption4;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label data_input_heading1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label form_heading1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private AnchorPane label_col_heading2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label label_sysmsg1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1a;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1b;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption1c;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption2;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_r_caption3;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Label opt_result_heading1;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Gross_Profit;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Prod_Vol_Noir;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Prod_Vol_Rose;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Prod_Vol_Total;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private TextField or_Profit_Margin;
+&nbsp;
+&nbsp;    @FXML
+&nbsp;    private Line vLine3;
+&nbsp;    
+&nbsp;    @FXML
+&nbsp;    private ListView&lt;String&gt; Or_Message;
+&nbsp;    
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Displays the result at in &quot;Optimized Result&quot; section
+&nbsp;     * @param Opt_Rose Number of litres to be produced for Ros?
+&nbsp;     * @param Opt_Noir Number of litres to be produced for P-Noir
+&nbsp;     * @param Opt_Profit Optimized total gross profits before tax could be generated for the year
+&nbsp;     * @param Opt_Margin Optimized profit margin
+&nbsp;     */
+&nbsp;    public void Display_Result(int Opt_Rose, int Opt_Noir, int Opt_Profit, double Opt_Margin){
+<b class="nc">&nbsp;    	or_Prod_Vol_Rose.setText(String.format(&quot;%,8d%n&quot;,Opt_Rose));</b>
+<b class="nc">&nbsp;    	or_Prod_Vol_Noir.setText(String.format(&quot;%,8d%n&quot;,Opt_Noir));</b>
+<b class="nc">&nbsp;        or_Prod_Vol_Total.setText(String.format(&quot;%,8d%n&quot;,Opt_Noir+Opt_Rose));</b>
+<b class="nc">&nbsp;        or_Gross_Profit.setText(String.format(&quot;%,8d%n&quot;, Opt_Profit));</b>
+<b class="nc">&nbsp;        or_Profit_Margin.setText(String.format(&quot;%,.1f&quot;, Opt_Margin));</b>
+&nbsp;    }
+&nbsp;    
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * Handles the click event of &quot;Run&quot; button.
+&nbsp;     * @param actionEvent
+&nbsp;     */
+&nbsp;    @FXML
+&nbsp;    public void To_Click(ActionEvent actionEvent) {
+<b class="nc">&nbsp;    	 String[] input = new String[7];</b>
+<b class="nc">&nbsp;         input[0] = Textfield_Num_Week.getText();</b>
+<b class="nc">&nbsp;         input[1] = Textfield_Cap_Labor.getText();</b>
+<b class="nc">&nbsp;         input[2] = Textfield_Cap_Grape.getText();</b>
+<b class="nc">&nbsp;         input[3] = Textfield_Prc_Rose.getText();</b>
+<b class="nc">&nbsp;         input[4] = Textfield_Prc_Noir.getText();</b>
+<b class="nc">&nbsp;         input[5] = Textfield_Fixed_Costs.getText();</b>
+<b class="nc">&nbsp;         Process_Calculation(input);     </b>
+&nbsp;    }
+&nbsp;    
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * Processes the calculation with the input data by calling methods in Function_A class.The calculation stops if encountered invalid input(s).
+&nbsp;     * @param input Contains Week of the year, Capacity of Labor, Capacity of Grape, Price of Ros?, Price of P-Noir, Fixed Costs (in ascending order) 
+&nbsp;     */
+&nbsp;    private void Process_Calculation(String[] input) {
+<b class="nc">&nbsp;        Function_A func = new Function_A();</b>
+<b class="nc">&nbsp;        ObservableList&lt;String&gt; Message = func.Data_Validation(input);</b>
+<b class="nc">&nbsp;        if(Message.size()&gt;0){</b>
+<b class="nc">&nbsp;            Display_Message(Message);</b>
+&nbsp;            return;
+&nbsp;        }
+<b class="nc">&nbsp;        func.Get_Data(input);</b>
+<b class="nc">&nbsp;        Result result = func.Get_Result();</b>
+<b class="nc">&nbsp;        Display_Result(result.Opt_Rose,result.Opt_Noir,result.Opt_Profit,result.Opt_Margin);</b>
+<b class="nc">&nbsp;        Message = func.Get_Warning_Message(result.Opt_Rose,result.Opt_Noir);</b>
+<b class="nc">&nbsp;        Display_Message(Message);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    
+&nbsp;    /**
+&nbsp;     * Displays the message in the format of ListView and display on &quot;System Messages/Warnings/Reminders&quot; section.
+&nbsp;     * @param Message
+&nbsp;     */
+&nbsp;    public void Display_Message(ObservableList&lt;String&gt; Message) {
+<b class="nc">&nbsp;        Or_Message.setItems(Message);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    /**Handle the click event of the &quot;Exit&quot; button.
+&nbsp;     * @param event
+&nbsp;     * @throws java.io.IOException
+&nbsp;     */
+&nbsp;    @FXML
+&nbsp;    void To_Exit(ActionEvent event) throws  java.io.IOException{
+<b class="nc">&nbsp;        Scene scene=new Scene(FXMLLoader.load(getClass().getResource(&quot;/ppc1.fxml&quot;)));</b>
+<b class="nc">&nbsp;        Main.stage.setScene(scene);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-05-07 18:58</div>
+</div>
+</body>
+</html>
