@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.junit.Test;
 import src.main.java.Function_C.Function_C;
-import src.main.java.Function_C.Result;
+import src.main.java.Function_C.Result_Function_C;
 
 import static org.junit.Assert.*;
 
@@ -15,8 +15,8 @@ public class Function_C_Tester {
         Function_C func = new Function_C();
         String[] input = {"2301","0","0","0.0","0.0","1","1"};
         func.Get_Data(input);
-        Result expected = new Result(false,0,0,0);
-        Result actual = func.Get_Result();
+        Result_Function_C expected = new Result_Function_C(false,0,0,0);
+        Result_Function_C actual = func.Get_Result();
         assertEquals(expected.Opt_Noir,actual.Opt_Noir);
         assertEquals(expected.Opt_Rose,actual.Opt_Rose);
         assertEquals(expected.Opt_Revenue,actual.Opt_Revenue);
@@ -27,8 +27,8 @@ public class Function_C_Tester {
         Function_C func = new Function_C();
         String[] input = {"2301","16","36","12","40","0","1"};
         func.Get_Data(input);
-        Result expected = new Result(true,0,1,40);
-        Result actual = func.Get_Result();
+        Result_Function_C expected = new Result_Function_C(true,0,1,40);
+        Result_Function_C actual = func.Get_Result();
         assertEquals(expected.Opt_Noir,actual.Opt_Noir);
         assertEquals(expected.Opt_Rose,actual.Opt_Rose);
         assertEquals(expected.Opt_Revenue,actual.Opt_Revenue);

@@ -18,32 +18,32 @@ public class Function_C {
     /**Calculates the optimal solution of the volume of Rosé and P-Noir with or without any backorder of Rosé and P-Noir to maximize the revenue
      * @return A Result object that stores the result of the optimal solution including the state of backorder fulfillment, optimal volume of Rosé, optimal volume of P-Noir, optimized sales revenue
      */
-    public Result Get_Result(){
+    public Result_Function_C Get_Result(){
         boolean Bko_Fulfill = false;
         int Opt_Rose = 0 ;
         int Opt_Noir = 0 ;
         if((Bko_Rose*5+Bko_Noir*12<=Cap_Labor)&&(Bko_Rose*6+Bko_Noir*4<=Cap_Grape)){
             Bko_Fulfill = true;
         }
-        Solver sol;
+        Solver_Function_C sol;
         if(Bko_Fulfill){
             Opt_Rose = Bko_Rose ;
             Opt_Noir = Bko_Noir ;
             int Available_Cap_Labor =  Cap_Labor - Bko_Rose*5 - Bko_Noir*12;
             int Available_Cap_Grape = Cap_Grape - Bko_Rose * 6 - Bko_Noir * 4;
-            sol = new Solver(Available_Cap_Labor,Available_Cap_Grape,Prc_Rose,Prc_Noir);
+            sol = new Solver_Function_C(Available_Cap_Labor,Available_Cap_Grape,Prc_Rose,Prc_Noir);
             int[] Result = sol.Opt_Solution(false,Bko_Rose,Bko_Noir);
             Opt_Rose += Result[0];
             Opt_Noir += Result[1];
         }else{
-            sol = new Solver(Cap_Labor,Cap_Grape,Prc_Rose,Prc_Noir);
+            sol = new Solver_Function_C(Cap_Labor,Cap_Grape,Prc_Rose,Prc_Noir);
             int[] Result = sol.Opt_Solution(true,Bko_Rose,Bko_Noir);
             Opt_Rose += Result[0];
             Opt_Noir += Result[1];
         }
 
         int Opt_Revenue = Double.valueOf(sol.Calculation(Opt_Rose,Opt_Noir)).intValue();
-        return new Result(Bko_Fulfill,Opt_Rose,Opt_Noir,Opt_Revenue);
+        return new Result_Function_C(Bko_Fulfill,Opt_Rose,Opt_Noir,Opt_Revenue);
     }
 
     /**Converts an array of the texted input into numeric data and stores in the fields of the class.
@@ -108,7 +108,7 @@ public class Function_C {
                 "Input error for Backorder Volume of Rose: Please enter a non-negative number.",
                 "Input error for Backorder Volume of P-Noir: Please enter a non-negative number."
         };
-        Validation_function_C val = new Validation_function_C();
+        Validation_Function_C val = new Validation_Function_C();
         ObservableList<String> items = FXCollections.observableArrayList();
         if(!val.Check_Week_Of_Year(input[0])){
             items.add(Message[0]);

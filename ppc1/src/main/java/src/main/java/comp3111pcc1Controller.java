@@ -10,6 +10,9 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+/**
+ * The comp3111pcc1Controller is the controller to control the GUI of the menu.
+ */
 public class comp3111pcc1Controller {
 
     @FXML
@@ -29,16 +32,6 @@ public class comp3111pcc1Controller {
 
     @FXML
     private AnchorPane menu1;
-
-    @FXML
-    void buttonPressed(ActionEvent event) {
-
-    }
-
-    @FXML
-    void buttonpressed(ActionEvent event) {
-
-    }
 
     @FXML
     private void Afunction() throws IOException {

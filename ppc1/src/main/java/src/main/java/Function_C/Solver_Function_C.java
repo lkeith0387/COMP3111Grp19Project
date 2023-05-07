@@ -4,16 +4,16 @@
 package src.main.java.Function_C;
 
 /**
- *The Solver class provides solutions for calculation of some outputs in functions, including optimal volume of Rosé, optimal volume of P-Noir, and the revenue obtain with specified volume of Rosé and P-Noir.
+ *The Solver_Function_C class provides solutions for calculation of some outputs in functions, including optimal volume of Rosé, optimal volume of P-Noir, and the revenue obtain with specified volume of Rosé and P-Noir.
  */
-public class Solver {
+public class Solver_Function_C {
     private int Cap_Labor = 0;
     private int Cap_Grape = 0;
     private float Prc_Rose = 0 ;
     private float Prc_Noir = 0 ;
 
 
-    /**Initializes a new Solver object that contains information on the capacity of Labor and Grape and the price of Rosé and P-Noir.
+    /**Initializes a new Solver_Function_C object that contains information on the capacity of Labor and Grape and the price of Rosé and P-Noir.
      * @param Cap_Labor  The capacity of Labor
      * @param Cap_Grape The capacity of Grape
      * @param Prc_Rose The price of Rosé
@@ -21,7 +21,7 @@ public class Solver {
      */
     //private int Production_Capacity_Limit = 0;
     //private double Man_Power_Limit = 0 ;
-    public Solver(int Cap_Labor,int Cap_Grape,float Prc_Rose,float Prc_Noir){
+    public Solver_Function_C(int Cap_Labor, int Cap_Grape, float Prc_Rose, float Prc_Noir){
         this.Cap_Labor = Cap_Labor;
         this.Cap_Grape = Cap_Grape;
         this.Prc_Rose =  Prc_Rose;

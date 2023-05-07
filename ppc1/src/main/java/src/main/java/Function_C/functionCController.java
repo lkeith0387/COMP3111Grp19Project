@@ -8,11 +8,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
-import src.main.java.Function_C.Function_C;
 import src.main.java.Main;
 
 /**
- * The functionCContoller class is the controller to the control the GUL of function C.
+ * The functionCContoller class is the controller to control the GUI of function C.
  */
 public class functionCController {
 
@@ -190,7 +189,7 @@ public class functionCController {
             return;
         }
         func.Get_Data(input);
-        Result result = func.Get_Result();
+        Result_Function_C result = func.Get_Result();
         Display_Result(result.Opt_Revenue,result.Opt_Noir,result.Opt_Rose,result.Bko_Fulfill);
         Message = func.Get_Warning_Message(result.Opt_Rose,result.Opt_Noir);
         Display_Message(Message);

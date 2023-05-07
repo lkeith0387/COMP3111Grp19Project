@@ -7,6 +7,9 @@ import javafx.application.Application;
  */
 public class AppMain {
 
+    /**The entry point of the program.
+     * @param args
+     */
     public static void main(String[] args) {
         Application.launch(Main.class,args);
     }
