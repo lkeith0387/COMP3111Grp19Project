@@ -260,7 +260,8 @@ public class functionBController {
     
   
     /**
-     * Get user input.
+     * to get user input in integer or float.
+     * @param input the string input
      */
     public void Input_Data(String[] input) {
     	num_week = Integer.parseInt(input[0]);
@@ -293,11 +294,8 @@ public class functionBController {
     
     /**
      * Handles mouse click event on "run" button
-     * @param event 
+     * @param event mouse click event
      */
-    
-    
-    
     @FXML 
     public void toclickB(ActionEvent event) {   ///function structure complete.
     	
