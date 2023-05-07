@@ -1,4 +1,4 @@
-package Function_B;
+package src.test.java.Function_B;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

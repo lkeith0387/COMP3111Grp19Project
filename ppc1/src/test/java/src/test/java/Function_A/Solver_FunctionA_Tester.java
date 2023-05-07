@@ -1,4 +1,4 @@
-package Function_A;
+package src.test.java.Function_A;
 
 import org.junit.Test;
 import src.main.java.Function_A.Solver_Function_A;

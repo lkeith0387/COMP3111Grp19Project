@@ -1,70 +1,128 @@
-package Function_A;
+package src.test.java.Function_C;
 
 import org.junit.Test;
-import src.main.java.Function_A.Validation_Function_A;
+import src.main.java.Function_C.Validation_Function_C;
 
 import static org.junit.Assert.*;
 
-public class Validation_FunctionA_Tester {
-    private Validation_Function_A val = new Validation_Function_A();
+public class Validation_functionC_Tester {
+    private Validation_Function_C val = new Validation_Function_C();
 
 
-    
     @Test
-    public void Check_Num_Week_Valid() {
+    public void Check_Week_Of_Year_Valid() {
         boolean expected = true;
-        boolean actual = val.Check_Num_Week("2");
+        boolean actual = val.Check_Week_Of_Year("2302");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Num_Week_InValid1(){
+    public void Check_Week_Of_Year_InValid1(){
         boolean expected = false;
-        boolean actual = val.Check_Num_Week("-1");
+        boolean actual = val.Check_Week_Of_Year("1");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Num_Week_InValid2(){
+    public void Check_Week_Of_Year_InValid2(){
         boolean expected = false;
-        boolean actual = val.Check_Num_Week("10000");
+        boolean actual = val.Check_Week_Of_Year("10000");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Num_Week_Upper_Bound(){
+    public void Check_Week_Of_Year_Upper_Bound(){
         boolean expected = true;
-        boolean actual = val.Check_Num_Week("15");
+        boolean actual = val.Check_Week_Of_Year("2315");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Num_Week_Lower_Bound(){
+    public void Check_Week_Of_Year_Lower_Bound(){
         boolean expected = true;
-        boolean actual = val.Check_Num_Week("1");
+        boolean actual = val.Check_Week_Of_Year("2301");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Num_Week_Invalid_Format1(){
+    public void Check_Week_Of_Year_Invalid_Format1(){
         boolean expected = false;
-        boolean actual = val.Check_Num_Week("Ahduhf-7");
+        boolean actual = val.Check_Week_Of_Year("Ahduhf-7");
         assertEquals(expected,actual);
     }
     @Test
-    public void Check_Num_Week_Invalid_Format2(){
+    public void Check_Week_Of_Year_Invalid_Format2(){
         boolean expected = false;
-        boolean actual = val.Check_Num_Week("6.7");
+        boolean actual = val.Check_Week_Of_Year("7.7");
         assertEquals(expected,actual);
     }
 
-    
-   
+
+    @Test
+    public void Check_Bko_Rose_Valid() {
+        boolean expected = true;
+        boolean actual = val.Check_Bko_Rose("2");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Rose_Invalid(){
+        boolean expected= false;
+        boolean actual = val.Check_Bko_Rose("-1");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Rose_Bound(){
+        boolean expected= true;
+        boolean actual = val.Check_Bko_Rose("0");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Rose_Invalid_Format1(){
+        boolean expected= false;
+        boolean actual = val.Check_Bko_Rose("0.2");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Rose_Invalid_Format2(){
+        boolean expected= false;
+        boolean actual = val.Check_Bko_Rose("0.2f");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Noir_Valid() {
+        boolean expected = true;
+        boolean actual = val.Check_Bko_Noir("2");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Noir_Invalid(){
+        boolean expected= false;
+        boolean actual = val.Check_Bko_Noir("-1");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Noir_Bound(){
+        boolean expected= true;
+        boolean actual = val.Check_Bko_Noir("0");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Noir_Invalid_Format1(){
+        boolean expected= false;
+        boolean actual = val.Check_Bko_Noir("0.2");
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void Check_Bko_Noir_Invalid_Format2(){
+        boolean expected= false;
+        boolean actual = val.Check_Bko_Noir("0.2f");
+        assertEquals(expected,actual);
+    }
     @Test
     public void Check_Prc_Rose_Valid() {
         boolean expected = true;
-        boolean actual = val.Check_Prc_Rose("6.07");
+        boolean actual = val.Check_Prc_Rose("2.01");
         assertEquals(expected,actual);
     }
     @Test
     public void Check_Prc_Rose_Invalid(){
         boolean expected= false;
-        boolean actual = val.Check_Prc_Rose("-0.89");
+        boolean actual = val.Check_Prc_Rose("-1.26");
         assertEquals(expected,actual);
     }
     @Test
@@ -76,17 +134,15 @@ public class Validation_FunctionA_Tester {
     @Test
     public void Check_Prc_Rose_Invalid_Format1(){
         boolean expected= false;
-        boolean actual = val.Check_Prc_Rose("xyz");
+        boolean actual = val.Check_Prc_Rose("asd");
         assertEquals(expected,actual);
     }
     @Test
     public void Check_Prc_Rose_Invalid_Format2(){
         boolean expected= false;
-        boolean actual = val.Check_Prc_Rose("0.4f");
+        boolean actual = val.Check_Prc_Rose("0.2f");
         assertEquals(expected,actual);
     }
-    
-    
     @Test
     public void Check_Prc_Noir_Valid() {
         boolean expected = true;
@@ -117,9 +173,6 @@ public class Validation_FunctionA_Tester {
         boolean actual = val.Check_Prc_Noir("0.2f");
         assertEquals(expected,actual);
     }
-    
-    
-    
     @Test
     public void Check_Cap_Labor_Valid() {
         boolean expected = true;
@@ -129,7 +182,7 @@ public class Validation_FunctionA_Tester {
     @Test
     public void Check_Cap_Labor_InValid(){
         boolean expected = false;
-        boolean actual = val.Check_Cap_Labor("-4");
+        boolean actual = val.Check_Cap_Labor("0");
         assertEquals(expected,actual);
     }
 
@@ -151,9 +204,6 @@ public class Validation_FunctionA_Tester {
         boolean actual = val.Check_Cap_Labor("7.7");
         assertEquals(expected,actual);
     }
-    
-    
-    
     @Test
     public void Check_Cap_Grape_Valid() {
         boolean expected = true;
@@ -163,7 +213,7 @@ public class Validation_FunctionA_Tester {
     @Test
     public void Check_Cap_Grape_InValid(){
         boolean expected = false;
-        boolean actual = val.Check_Cap_Grape("-9");
+        boolean actual = val.Check_Cap_Grape("0");
         assertEquals(expected,actual);
     }
 
@@ -183,40 +233,6 @@ public class Validation_FunctionA_Tester {
     public void Check_Cap_Grape_Invalid_Format2(){
         boolean expected = false;
         boolean actual = val.Check_Cap_Grape("7.7");
-        assertEquals(expected,actual);
-    }
-
-    
-    
-    @Test
-    public void Check_Fixed_Costs_Valid() {
-        boolean expected = true;
-        boolean actual = val.Check_Fixed_Costs("10000");
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void Check_Fixed_Costs_InValid(){
-        boolean expected = false;
-        boolean actual = val.Check_Fixed_Costs("-7");
-        assertEquals(expected,actual);
-    }
-
-    @Test
-    public void Check_Fixed_Costs_Bound(){
-        boolean expected = true;
-        boolean actual = val.Check_Fixed_Costs("0");
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void Check_Fixed_Costs_Invalid_Format1(){
-        boolean expected = false;
-        boolean actual = val.Check_Fixed_Costs("Ahduhf-7");
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void Check_Fixed_Costs_Invalid_Format2(){
-        boolean expected = false;
-        boolean actual = val.Check_Fixed_Costs("6.6");
         assertEquals(expected,actual);
     }
 
