@@ -4,10 +4,11 @@ package src.main.java.Function_A;
  * Result class stores the result data of the optimal calculation from function A.
  */
 public class Result {
-    public final int Opt_Rose ;
-    public final int Opt_Noir ;
-    public final int Opt_Profit ;
-    public final double Opt_Margin;
+
+    public final int Opt_Rose;		 // Number of litres to be produced for Rosé
+    public final int Opt_Noir;		 // Number of litres to be produced for P-Noir
+    public final int Opt_Profit;	 // Optimized total gross profits before tax could be generated for the year
+    public final double Opt_Margin;	 // Optimized profit margin
 
     /**
      * Initialize a new Result object that stores all the result of the optimal calculation in function A

@@ -66,8 +66,8 @@ public class Function_A {
     
     /**
      * Checks whether the optimal solution of the volume of Rosé and P-Noir will lead to abnormal situation and produces warning messages for abnormal situations.
-     * @param Opt_Rose
-     * @param Opt_Noir
+     * @param Opt_Rose Number of litres to be produced for Rosé
+     * @param Opt_Noir Number of litres to be produced for P-Noir
      * @return A list of warning messages caused by the optimal solution. The list will be empty if there is no abnormal situation happened.
      */
     public ObservableList<String> Get_Warning_Message(int Opt_Rose, int Opt_Noir) {
