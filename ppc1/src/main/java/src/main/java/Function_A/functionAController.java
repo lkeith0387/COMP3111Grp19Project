@@ -154,7 +154,7 @@ public class functionAController {
     
     /**
      * Handles the click event of "Run" button.
-     * @param actionEvent
+     * @param actionEvent get user input
      */
     @FXML
     public void To_Click(ActionEvent actionEvent) {
@@ -190,7 +190,7 @@ public class functionAController {
     
     /**
      * Displays the message in the format of ListView and display on "System Messages/Warnings/Reminders" section.
-     * @param Message
+     * @param Message corresponding system messages/warnings/reminders
      */
     public void Display_Message(ObservableList<String> Message) {
         Or_Message.setItems(Message);
