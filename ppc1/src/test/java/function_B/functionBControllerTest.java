@@ -1,4 +1,4 @@
-package ppc;
+package function_B;
 
 
 import static org.junit.Assert.assertEquals;
@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import src.main.java.function_B.functionBController;
 
 
 public class functionBControllerTest {

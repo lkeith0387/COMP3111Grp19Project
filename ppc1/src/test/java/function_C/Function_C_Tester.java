@@ -90,13 +90,13 @@ public class Function_C_Tester {
     @Test
     public void Data_Validation(){
         String[] expected = new String[]{
-                "Input error for Week Of Year: Please enter an integer in between 2301 and 2315",
-                "Input error for Capacity Of Labor: Please enter an integer greater than 0",
-                "Input error for Capacity Of Grape: Please enter an integer greater than 0",
-                "Input error for Price Of Rose: Please enter a number greater than 0",
-                "Input error for Price Of P-Noir: Please enter a number greater than 0",
-                "Input error for Backorder Volume of Rose: Please enter a number greater than 0",
-                "Input error for Backorder Volume of P-Noir: Please enter a number greater than 0"
+                "Input error for Week Of Year: Please enter an integer in between 2301 and 2315.",
+                "Input error for Capacity Of Labor: Please enter an integer greater than 0.",
+                "Input error for Capacity Of Grape: Please enter an integer greater than 0.",
+                "Input error for Price Of Rose: Please enter a number greater than 0.",
+                "Input error for Price Of P-Noir: Please enter a number greater than 0.",
+                "Input error for Backorder Volume of Rose: Please enter a non-negative number.",
+                "Input error for Backorder Volume of P-Noir: Please enter a non-negative number."
         };
         Function_C func = new Function_C();
         String[] input = {"","","","","","",""};
