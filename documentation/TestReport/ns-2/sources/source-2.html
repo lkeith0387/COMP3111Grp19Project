@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html id="htmlId">
 <head>
-  <title>Coverage Report > Result</title>
+  <title>Coverage Report > Result_Function_A</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -21,7 +21,7 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">src.main.java.Function_A</a>
 </div>
 
-<h1>Coverage Summary for Class: Result (src.main.java.Function_A)</h1>
+<h1>Coverage Summary for Class: Result_Function_A (src.main.java.Function_A)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -40,7 +40,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 </th>
 </tr>
 <tr>
-  <td class="name">Result</td>
+  <td class="name">Result_Function_A</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -77,22 +77,35 @@ Current scope:     <a href="../../index.html">all classes</a>
 <code class="sourceCode" id="sourceCode">&nbsp;package src.main.java.Function_A;
 &nbsp;
 &nbsp;/**
-&nbsp; * Result class stores the result data of the optimal calculation from function A.
+&nbsp; * Result_Function_A class stores the result data of the optimal calculation from function A.
 &nbsp; */
-&nbsp;public class Result {
-&nbsp;    public final int Opt_Rose ;
-&nbsp;    public final int Opt_Noir ;
-&nbsp;    public final int Opt_Profit ;
+&nbsp;public class Result_Function_A {
+&nbsp;
+&nbsp;    /**Number of litres to be produced for Ros?
+&nbsp;     *
+&nbsp;     */
+&nbsp;    public final int Opt_Rose;
+&nbsp;    /**Number of litres to be produced for P-Noir
+&nbsp;     *
+&nbsp;     */
+&nbsp;    public final int Opt_Noir;
+&nbsp;    /**Optimized total gross profits before tax could be generated for the year
+&nbsp;     *
+&nbsp;     */
+&nbsp;    public final int Opt_Profit;
+&nbsp;    /**Optimized profit margin
+&nbsp;     *
+&nbsp;     */
 &nbsp;    public final double Opt_Margin;
 &nbsp;
 &nbsp;    /**
-&nbsp;     * Initialize a new Result object that stores all the result of the optimal calculation in function A
+&nbsp;     * Initialize a new Result_Function_A object that stores all the result of the optimal calculation in function A
 &nbsp;     * @param Opt_Rose Number of litres to be produced for Ros?
 &nbsp;     * @param Opt_Noir Number of litres to be produced for P-Noir
 &nbsp;     * @param Opt_Profit Optimized total gross profits before tax could be generated for the year
 &nbsp;     * @param Opt_Margin Optimized profit margin
 &nbsp;     */
-<b class="fc">&nbsp;    public Result(int Opt_Rose,int Opt_Noir,int Opt_Profit, double Opt_Margin){</b>
+<b class="fc">&nbsp;    public Result_Function_A(int Opt_Rose, int Opt_Noir, int Opt_Profit, double Opt_Margin){</b>
 <b class="fc">&nbsp;        this.Opt_Rose = Opt_Rose;</b>
 <b class="fc">&nbsp;        this.Opt_Noir = Opt_Noir;</b>
 <b class="fc">&nbsp;        this.Opt_Profit = Opt_Profit;</b>
@@ -122,7 +135,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-07 18:58</div>
+    <div style="float:right;">generated on 2023-05-07 20:52</div>
 </div>
 </body>
 </html>

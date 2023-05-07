@@ -230,7 +230,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    
 &nbsp;    /**
 &nbsp;     * Handles the click event of &quot;Run&quot; button.
-&nbsp;     * @param actionEvent
+&nbsp;     * @param actionEvent get user input
 &nbsp;     */
 &nbsp;    @FXML
 &nbsp;    public void To_Click(ActionEvent actionEvent) {
@@ -257,7 +257,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            return;
 &nbsp;        }
 <b class="nc">&nbsp;        func.Get_Data(input);</b>
-<b class="nc">&nbsp;        Result result = func.Get_Result();</b>
+<b class="nc">&nbsp;        Result_Function_A result = func.Get_Result();</b>
 <b class="nc">&nbsp;        Display_Result(result.Opt_Rose,result.Opt_Noir,result.Opt_Profit,result.Opt_Margin);</b>
 <b class="nc">&nbsp;        Message = func.Get_Warning_Message(result.Opt_Rose,result.Opt_Noir);</b>
 <b class="nc">&nbsp;        Display_Message(Message);</b>
@@ -266,7 +266,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    
 &nbsp;    /**
 &nbsp;     * Displays the message in the format of ListView and display on &quot;System Messages/Warnings/Reminders&quot; section.
-&nbsp;     * @param Message
+&nbsp;     * @param Message corresponding system messages/warnings/reminders
 &nbsp;     */
 &nbsp;    public void Display_Message(ObservableList&lt;String&gt; Message) {
 <b class="nc">&nbsp;        Or_Message.setItems(Message);</b>
@@ -308,7 +308,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-07 18:58</div>
+    <div style="float:right;">generated on 2023-05-07 20:52</div>
 </div>
 </body>
 </html>

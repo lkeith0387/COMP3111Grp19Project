@@ -84,11 +84,10 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;import javafx.scene.control.*;
 &nbsp;import javafx.scene.layout.AnchorPane;
 &nbsp;import javafx.scene.shape.Line;
-&nbsp;import src.main.java.Function_C.Function_C;
 &nbsp;import src.main.java.Main;
 &nbsp;
 &nbsp;/**
-&nbsp; * The functionCContoller class is the controller to the control the GUL of function C.
+&nbsp; * The functionCContoller class is the controller to control the GUI of function C.
 &nbsp; */
 <b class="nc">&nbsp;public class functionCController {</b>
 &nbsp;
@@ -266,7 +265,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;            return;
 &nbsp;        }
 <b class="nc">&nbsp;        func.Get_Data(input);</b>
-<b class="nc">&nbsp;        Result result = func.Get_Result();</b>
+<b class="nc">&nbsp;        Result_Function_C result = func.Get_Result();</b>
 <b class="nc">&nbsp;        Display_Result(result.Opt_Revenue,result.Opt_Noir,result.Opt_Rose,result.Bko_Fulfill);</b>
 <b class="nc">&nbsp;        Message = func.Get_Warning_Message(result.Opt_Rose,result.Opt_Noir);</b>
 <b class="nc">&nbsp;        Display_Message(Message);</b>
@@ -315,7 +314,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-07 18:58</div>
+    <div style="float:right;">generated on 2023-05-07 20:52</div>
 </div>
 </body>
 </html>

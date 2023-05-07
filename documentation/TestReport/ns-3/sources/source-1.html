@@ -94,32 +94,32 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    /**Calculates the optimal solution of the volume of Ros? and P-Noir with or without any backorder of Ros? and P-Noir to maximize the revenue
 &nbsp;     * @return A Result object that stores the result of the optimal solution including the state of backorder fulfillment, optimal volume of Ros?, optimal volume of P-Noir, optimized sales revenue
 &nbsp;     */
-&nbsp;    public Result Get_Result(){
+&nbsp;    public Result_Function_C Get_Result(){
 <b class="fc">&nbsp;        boolean Bko_Fulfill = false;</b>
 <b class="fc">&nbsp;        int Opt_Rose = 0 ;</b>
 <b class="fc">&nbsp;        int Opt_Noir = 0 ;</b>
 <b class="fc">&nbsp;        if((Bko_Rose*5+Bko_Noir*12&lt;=Cap_Labor)&amp;&amp;(Bko_Rose*6+Bko_Noir*4&lt;=Cap_Grape)){</b>
 <b class="fc">&nbsp;            Bko_Fulfill = true;</b>
 &nbsp;        }
-&nbsp;        Solver sol;
+&nbsp;        Solver_Function_C sol;
 <b class="fc">&nbsp;        if(Bko_Fulfill){</b>
 <b class="fc">&nbsp;            Opt_Rose = Bko_Rose ;</b>
 <b class="fc">&nbsp;            Opt_Noir = Bko_Noir ;</b>
 <b class="fc">&nbsp;            int Available_Cap_Labor =  Cap_Labor - Bko_Rose*5 - Bko_Noir*12;</b>
 <b class="fc">&nbsp;            int Available_Cap_Grape = Cap_Grape - Bko_Rose * 6 - Bko_Noir * 4;</b>
-<b class="fc">&nbsp;            sol = new Solver(Available_Cap_Labor,Available_Cap_Grape,Prc_Rose,Prc_Noir);</b>
+<b class="fc">&nbsp;            sol = new Solver_Function_C(Available_Cap_Labor,Available_Cap_Grape,Prc_Rose,Prc_Noir);</b>
 <b class="fc">&nbsp;            int[] Result = sol.Opt_Solution(false,Bko_Rose,Bko_Noir);</b>
 <b class="fc">&nbsp;            Opt_Rose += Result[0];</b>
 <b class="fc">&nbsp;            Opt_Noir += Result[1];</b>
 <b class="fc">&nbsp;        }else{</b>
-<b class="fc">&nbsp;            sol = new Solver(Cap_Labor,Cap_Grape,Prc_Rose,Prc_Noir);</b>
+<b class="fc">&nbsp;            sol = new Solver_Function_C(Cap_Labor,Cap_Grape,Prc_Rose,Prc_Noir);</b>
 <b class="fc">&nbsp;            int[] Result = sol.Opt_Solution(true,Bko_Rose,Bko_Noir);</b>
 <b class="fc">&nbsp;            Opt_Rose += Result[0];</b>
 <b class="fc">&nbsp;            Opt_Noir += Result[1];</b>
 &nbsp;        }
 &nbsp;
 <b class="fc">&nbsp;        int Opt_Revenue = Double.valueOf(sol.Calculation(Opt_Rose,Opt_Noir)).intValue();</b>
-<b class="fc">&nbsp;        return new Result(Bko_Fulfill,Opt_Rose,Opt_Noir,Opt_Revenue);</b>
+<b class="fc">&nbsp;        return new Result_Function_C(Bko_Fulfill,Opt_Rose,Opt_Noir,Opt_Revenue);</b>
 &nbsp;    }
 &nbsp;
 &nbsp;    /**Converts an array of the texted input into numeric data and stores in the fields of the class.
@@ -184,7 +184,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                &quot;Input error for Backorder Volume of Rose: Please enter a non-negative number.&quot;,
 &nbsp;                &quot;Input error for Backorder Volume of P-Noir: Please enter a non-negative number.&quot;
 &nbsp;        };
-<b class="fc">&nbsp;        Validation_function_C val = new Validation_function_C();</b>
+<b class="fc">&nbsp;        Validation_Function_C val = new Validation_Function_C();</b>
 <b class="fc">&nbsp;        ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
 <b class="fc">&nbsp;        if(!val.Check_Week_Of_Year(input[0])){</b>
 <b class="fc">&nbsp;            items.add(Message[0]);</b>
@@ -238,7 +238,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-07 18:58</div>
+    <div style="float:right;">generated on 2023-05-07 20:52</div>
 </div>
 </body>
 </html>

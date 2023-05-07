@@ -267,6 +267,12 @@ public class functionBController {
     /**
      * to get user input in integer or float.
      * @param input the string input
+     *        input[0] is num_week
+     *        input[1] is cap_labor
+     *        input[2] is cap_grape
+     *        input[3] is prc_rose
+     *        input[4] is prc_noir
+     *
      */
     public void Input_Data(String[] input) {
     	num_week = Integer.parseInt(input[0]);
@@ -404,6 +410,7 @@ public class functionBController {
      * to get warning messages
      * @param opt_Rose the optimal mix of rose
      * @param opt_Noir the optimal mix of P-Noir
+     * @return A list of warning messages caused by the optimal solution. The list will be empty if there is no abnormal situation happened.
      */
     public ObservableList<String> message(int opt_Rose,int opt_Noir) {
     	ObservableList<String> items = FXCollections.observableArrayList();
@@ -428,6 +435,14 @@ public class functionBController {
     
     /**
      * A function to call an extra class to verify if the input are in valid formats.
+     *
+     *@param input the string input
+     *             input[0] is num_week.
+     *             input[1] is cap_labor.
+     *             input[2] is cap_grape.
+     *             input[3] is prc_rose.
+     *             input[4] is prc_noir.
+     *
      * @return a boolean whether the test passed.
      */
     public ObservableList<String> datainvalid(String[] input) {
@@ -468,6 +483,7 @@ public class functionBController {
     /**
      * Handle mouse click event on "Exit" button
      * @param event
+     * @throws java.io.IOException
      */
     public void toexitB(ActionEvent event) throws IOException {
         Scene scene=new Scene(FXMLLoader.load(getClass().getResource("/ppc1.fxml")));

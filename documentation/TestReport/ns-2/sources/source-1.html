@@ -95,13 +95,13 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;     * Calculates the optimal volume of two wines (Ros? and P-Noir), then used them to calculate VCL, Sales Revenue, Gross Profit and Profit Margin.
 &nbsp;     * @return A Result object that stores the returns optimal volume of Ros?, optimal volume of P-Noir, optimized total gross profits, optimized profit margin
 &nbsp;     */
-&nbsp;    public Result Get_Result(){
+&nbsp;    public Result_Function_A Get_Result(){
 <b class="fc">&nbsp;    	int Opt_Rose = 0 ;</b>
 <b class="fc">&nbsp;        int Opt_Noir = 0 ;</b>
 <b class="fc">&nbsp;        double Labor_Rate = (935/37.5/60);</b>
 &nbsp;        
-&nbsp;        Solver sol;
-<b class="fc">&nbsp;        sol = new Solver(Cap_Labor, Cap_Grape, Prc_Rose, Prc_Noir);</b>
+&nbsp;        Solver_Function_A sol;
+<b class="fc">&nbsp;        sol = new Solver_Function_A(Cap_Labor, Cap_Grape, Prc_Rose, Prc_Noir);</b>
 <b class="fc">&nbsp;        int[] Result = sol.Opt_Solution();</b>
 <b class="fc">&nbsp;        Opt_Rose += Result[0];</b>
 <b class="fc">&nbsp;        Opt_Noir += Result[1];</b>
@@ -111,7 +111,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 <b class="fc">&nbsp;        int Gross_Profit = (int) (Math.round(Sales_Revenue - VCL - Fixed_Costs)); 			 	// Gross Profit = Opt_Profit</b>
 <b class="fc">&nbsp;        double Opt_Margin_NotConv = (((double)Gross_Profit) * 100 / Sales_Revenue);				// Profit Margin = Opt_Margin</b>
 <b class="fc">&nbsp;        double Opt_Margin = roundTwoSigFig(Opt_Margin_NotConv, 1);								// Round Opt_Margin_NotConv to the nearest significant figure</b>
-<b class="fc">&nbsp;        return new Result (Opt_Rose, Opt_Noir, Gross_Profit, Opt_Margin);</b>
+<b class="fc">&nbsp;        return new Result_Function_A(Opt_Rose, Opt_Noir, Gross_Profit, Opt_Margin);</b>
 &nbsp;    }
 &nbsp;    
 &nbsp;    
@@ -142,8 +142,8 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;    
 &nbsp;    /**
 &nbsp;     * Checks whether the optimal solution of the volume of Ros? and P-Noir will lead to abnormal situation and produces warning messages for abnormal situations.
-&nbsp;     * @param Opt_Rose
-&nbsp;     * @param Opt_Noir
+&nbsp;     * @param Opt_Rose Number of litres to be produced for Ros?
+&nbsp;     * @param Opt_Noir Number of litres to be produced for P-Noir
 &nbsp;     * @return A list of warning messages caused by the optimal solution. The list will be empty if there is no abnormal situation happened.
 &nbsp;     */
 &nbsp;    public ObservableList&lt;String&gt; Get_Warning_Message(int Opt_Rose, int Opt_Noir) {
@@ -176,7 +176,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;                &quot;Input error for Fixed Costs: Please enter a number greater than 0&quot;
 &nbsp;        };
 &nbsp;        
-<b class="fc">&nbsp;        Validation val = new Validation();</b>
+<b class="fc">&nbsp;        Validation_Function_A val = new Validation_Function_A();</b>
 <b class="fc">&nbsp;        ObservableList&lt;String&gt; items = FXCollections.observableArrayList();</b>
 <b class="fc">&nbsp;        if(!val.Check_Num_Week(input[0])){</b>
 <b class="fc">&nbsp;            items.add(Message[0]);</b>
@@ -222,7 +222,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-07 18:58</div>
+    <div style="float:right;">generated on 2023-05-07 20:52</div>
 </div>
 </body>
 </html>

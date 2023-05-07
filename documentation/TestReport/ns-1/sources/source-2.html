@@ -83,11 +83,22 @@ Current scope:     <a href="../../index.html">all classes</a>
 &nbsp;
 &nbsp;import java.io.IOException;
 &nbsp;
+&nbsp;/**
+&nbsp; * The Main class starts the application.
+&nbsp; */
 <b class="nc">&nbsp;public class Main extends Application {</b>
 &nbsp;
 &nbsp;    public static Stage stage;
 &nbsp;    public static Scene scene;
 &nbsp;
+&nbsp;    /**
+&nbsp;     * Creates the primary stage for this application.
+&nbsp;     * @param primaryStage the primary stage for this application, onto which
+&nbsp;     *                     the application scene can be set.
+&nbsp;     *                     Applications may create other stages, if needed, but they will not be
+&nbsp;     *                     primary stages.
+&nbsp;     * @throws IOException
+&nbsp;     */
 &nbsp;    @Override
 &nbsp;    public void start(Stage primaryStage) throws IOException {
 <b class="nc">&nbsp;        stage=primaryStage;</b>
@@ -119,7 +130,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2023-05-07 18:58</div>
+    <div style="float:right;">generated on 2023-05-07 20:52</div>
 </div>
 </body>
 </html>
