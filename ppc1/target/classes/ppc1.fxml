@@ -54,7 +54,7 @@
                   <Glow />
                </effect>
             </Label>
-            <Button fx:id="function1" layoutX="215.0" layoutY="191.0" mnemonicParsing="false" onAction="#Afunction" prefHeight="30.0" prefWidth="350.0" style="-fx-background-color: orange;" text="Annual Forecast by Gross Profit" textFill="#171817" />
+            <Button fx:id="function1" layoutX="215.0" layoutY="191.0" mnemonicParsing="false" onAction="#Afunction" prefHeight="30.0" prefWidth="350.0" style="-fx-background-color: orange; -fx-font-size: 15;" text="Annual Forecast by Gross Profit" textFill="#171817" />
             <Button fx:id="button_exit1" layoutX="350.0" layoutY="491.0" mnemonicParsing="false" onAction="#exit1" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: brown;" text="EXIT " textFill="#fcfc08">
                <font>
                   <Font name="System Bold" size="12.0" />
