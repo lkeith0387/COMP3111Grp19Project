@@ -181,7 +181,7 @@ public class functionAController {
             return;
         }
         func.Get_Data(input);
-        Result result = func.Get_Result();
+        Result_Function_A result = func.Get_Result();
         Display_Result(result.Opt_Rose,result.Opt_Noir,result.Opt_Profit,result.Opt_Margin);
         Message = func.Get_Warning_Message(result.Opt_Rose,result.Opt_Noir);
         Display_Message(Message);

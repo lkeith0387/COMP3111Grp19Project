@@ -1,12 +1,12 @@
-package src.test.java.function_A;
+package Function_A;
 
 import org.junit.Test;
-import src.main.java.Function_A.Validation;
+import src.main.java.Function_A.Validation_Function_A;
 
 import static org.junit.Assert.*;
 
-public class Validation_Tester {
-    private Validation val = new Validation();
+public class Validation_FunctionA_Tester {
+    private Validation_Function_A val = new Validation_Function_A();
 
 
     

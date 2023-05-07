@@ -1,9 +1,9 @@
 package src.main.java.Function_A;
 
 /**
- * Validation class use to validate input from Function_A.
+ * Validation_Function_A class use to validate input from Function_A.
  */
-public class Validation {
+public class Validation_Function_A {
 	
 	
     /**

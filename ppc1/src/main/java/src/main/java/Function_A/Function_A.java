@@ -19,13 +19,13 @@ public class Function_A {
      * Calculates the optimal volume of two wines (Rosé and P-Noir), then used them to calculate VCL, Sales Revenue, Gross Profit and Profit Margin.
      * @return A Result object that stores the returns optimal volume of Rosé, optimal volume of P-Noir, optimized total gross profits, optimized profit margin
      */
-    public Result Get_Result(){
+    public Result_Function_A Get_Result(){
     	int Opt_Rose = 0 ;
         int Opt_Noir = 0 ;
         double Labor_Rate = (935/37.5/60);
         
-        Solver sol;
-        sol = new Solver(Cap_Labor, Cap_Grape, Prc_Rose, Prc_Noir);
+        Solver_Function_A sol;
+        sol = new Solver_Function_A(Cap_Labor, Cap_Grape, Prc_Rose, Prc_Noir);
         int[] Result = sol.Opt_Solution();
         Opt_Rose += Result[0];
         Opt_Noir += Result[1];
@@ -35,7 +35,7 @@ public class Function_A {
         int Gross_Profit = (int) (Math.round(Sales_Revenue - VCL - Fixed_Costs)); 			 	// Gross Profit = Opt_Profit
         double Opt_Margin_NotConv = (((double)Gross_Profit) * 100 / Sales_Revenue);				// Profit Margin = Opt_Margin
         double Opt_Margin = roundTwoSigFig(Opt_Margin_NotConv, 1);								// Round Opt_Margin_NotConv to the nearest significant figure
-        return new Result (Opt_Rose, Opt_Noir, Gross_Profit, Opt_Margin);
+        return new Result_Function_A(Opt_Rose, Opt_Noir, Gross_Profit, Opt_Margin);
     }
     
     
@@ -100,7 +100,7 @@ public class Function_A {
                 "Input error for Fixed Costs: Please enter a number greater than 0"
         };
         
-        Validation val = new Validation();
+        Validation_Function_A val = new Validation_Function_A();
         ObservableList<String> items = FXCollections.observableArrayList();
         if(!val.Check_Num_Week(input[0])){
             items.add(Message[0]);

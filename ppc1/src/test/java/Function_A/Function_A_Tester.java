@@ -1,10 +1,10 @@
-package src.test.java.function_A;
+package Function_A;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.junit.Test;
 import src.main.java.Function_A.Function_A;
-import src.main.java.Function_A.Result;
+import src.main.java.Function_A.Result_Function_A;
 
 import static org.junit.Assert.*;
 
@@ -15,8 +15,8 @@ public class Function_A_Tester {
         Function_A func = new Function_A();
         String[] input = {"1","0","0","0.0","0.0","0"};
         func.Get_Data(input);
-        Result expected = new Result(0,0,0,0.0);
-        Result actual = func.Get_Result();
+        Result_Function_A expected = new Result_Function_A(0,0,0,0.0);
+        Result_Function_A actual = func.Get_Result();
         assertEquals(expected.Opt_Noir,actual.Opt_Noir);
         assertEquals(expected.Opt_Rose,actual.Opt_Rose);
         assertEquals(expected.Opt_Profit,actual.Opt_Profit);

@@ -1,4 +1,4 @@
-package function_C;
+package Function_C;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

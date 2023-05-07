@@ -1,8 +1,8 @@
-package function_B;
+package Function_B;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import src.main.java.*;
+
 import src.main.java.function_B.*;
 import org.junit.Assert;
 import org.junit.Test;

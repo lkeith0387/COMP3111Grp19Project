@@ -1,4 +1,4 @@
-package function_B;
+package Function_B;
 
 import org.junit.Test;
 

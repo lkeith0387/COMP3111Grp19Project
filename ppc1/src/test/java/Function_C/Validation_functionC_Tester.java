@@ -1,4 +1,4 @@
-package function_C;
+package Function_C;
 
 import org.junit.Test;
 import src.main.java.Function_C.Validation_Function_C;

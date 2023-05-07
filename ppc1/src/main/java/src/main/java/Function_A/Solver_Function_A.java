@@ -4,9 +4,9 @@
 package src.main.java.Function_A;
 
 /**
- * Solver class provides solutions for calculation of some outputs in functions, including optimal volume of Rose and P-Noir, and the revenue obtain with specified volume of Rose and  P-Noir.
+ * Solver_Function_A class provides solutions for calculation of some outputs in functions, including optimal volume of Rose and P-Noir, and the revenue obtain with specified volume of Rose and  P-Noir.
  */
-public class Solver {
+public class Solver_Function_A {
     private int Cap_Labor = 0;
     private int Cap_Grape = 0;
     private float Prc_Rose = 0 ;
@@ -14,7 +14,7 @@ public class Solver {
 
 
     /**
-     * Initializes a new Solver object that contains information on the capacity of Labor and Grape and the price of Rose and P-Noir.
+     * Initializes a new Solver_Function_A object that contains information on the capacity of Labor and Grape and the price of Rose and P-Noir.
      * @param Cap_Labor  The capacity of Labor
      * @param Cap_Grape The capacity of Grape
      * @param Prc_Rose The price of Rose
@@ -22,7 +22,7 @@ public class Solver {
      */
     //private int Production_Capacity_Limit = 0;
     //private double Man_Power_Limit = 0 ;
-    public Solver(int Cap_Labor,int Cap_Grape,float Prc_Rose,float Prc_Noir){
+    public Solver_Function_A(int Cap_Labor, int Cap_Grape, float Prc_Rose, float Prc_Noir){
         this.Cap_Labor = Cap_Labor;
         this.Cap_Grape = Cap_Grape;
         this.Prc_Rose =  Prc_Rose;
