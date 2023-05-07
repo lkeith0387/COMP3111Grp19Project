@@ -32,6 +32,9 @@ public class Solver {
     }
 
     /**Calculates the optimal solution of volume of Rosé and P-Noir to obtain the highest revenue and store the result into an int array.
+     * @param celling True when the backorder volume of Rosé or P-Noir can be fulfilled, and vice versa.
+     * @param celling_of_Rose The maximum limit of Rosé that can be produced
+     * @param celling_of_Noir The maximum limit of P-Noir that can be produced
      * @return  int[0]-The optimal volume of Rosé
      *          int[1]-The optimal volume of P-Noir
      *
